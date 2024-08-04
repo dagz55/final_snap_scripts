@@ -1,0 +1,28 @@
+2024-08-05 06:23:33,230:ERROR:An unexpected error occurred: name 'venv' is not defined
+Traceback (most recent call last):
+  File "/Users/robertsuarez/project_automation/prod/main.py", line 713, in <module>
+    setup_venv()
+  File "/Users/robertsuarez/project_automation/prod/main.py", line 680, in setup_venv
+    venv.create(venv_dir, with_pip=True)
+    ^^^^
+NameError: name 'venv' is not defined. Did you forget to import 'venv'
+
+2024-08-05 06:30:39,103:ERROR:An unexpected error occurred: name 'venv' is not defined
+Traceback (most recent call last):
+  File "/Users/robertsuarez/project_automation/prod/main.py", line 713, in <module>
+    setup_venv()
+  File "/Users/robertsuarez/project_automation/prod/main.py", line 680, in setup_venv
+    venv.create(venv_dir, with_pip=True)
+    ^^^^
+NameError: name 'venv' is not defined. Did you forget to import 'venv'
+
+2024-08-05 06:34:09,566:ERROR:An unexpected error occurred: name 'venv' is not defined
+Traceback (most recent call last):
+  File "/Users/robertsuarez/project_automation/prod/main.py", line 713, in <module>
+    setup_venv()
+  File "/Users/robertsuarez/project_automation/prod/main.py", line 680, in setup_venv
+    venv.create(venv_dir, with_pip=True)
+    ^^^^
+NameError: name 'venv' is not defined. Did you forget to import 'venv'
+
+2024-08-05 07:30:24,147:DEBUG:Using selector: KqueueSelector

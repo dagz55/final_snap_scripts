@@ -1,0 +1,6 @@
+.aider*
+.snapvenv
+.snapshot_summary*
+.snapshot_log*
+.*env
+logs

@@ -1,0 +1,7 @@
+rich
+tabulate
+aiohttp
+simple-term-menu
+azure-identity 
+azure-mgmt-compute 
+azure-mgmt-resource
