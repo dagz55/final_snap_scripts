@@ -1,5 +1,22 @@
 import os
 import sys
+import subprocess
+
+def check_azure_cli_installed():
+    try:
+        subprocess.run(["az", "--version"], capture_output=True, check=True)
+        return True
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        return False
+
+def install_azure_cli():
+    print("Azure CLI is not installed. Installing...")
+    try:
+        subprocess.run([sys.executable, "-m", "pip", "install", "azure-cli"], check=True)
+        print("Azure CLI installed successfully.")
+    except subprocess.CalledProcessError as e:
+        print(f"Failed to install Azure CLI: {e}")
+        sys.exit(1)
 
 def patch_azure_cli():
     site_packages = next(p for p in sys.path if 'site-packages' in p)
@@ -19,4 +36,6 @@ def patch_azure_cli():
     print("Azure CLI patched successfully.")
 
 if __name__ == "__main__":
+    if not check_azure_cli_installed():
+        install_azure_cli()
     patch_azure_cli()
