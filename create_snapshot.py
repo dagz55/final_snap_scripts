@@ -24,6 +24,14 @@ expire_days = 3
 semaphore = asyncio.Semaphore(10)
 successful_snapshots = []
 failed_snapshots = []
+inventory_file = 'linux_vm-inventory.csv'
+
+def get_vm_info(hostname, inventory_file):
+    with open(inventory_file, 'r') as f:
+        for line in f:
+            if hostname in line:
+                return line.strip()
+    return None
 
 async def run_az_command(command, max_retries=3, delay=5):
     for attempt in range(max_retries):
@@ -105,12 +113,27 @@ async def main():
     
     write_log(f"CHG Number: {chg_number}")
 
-    try:
-        with open(host_file) as file:
-            vm_list = [line.strip() for line in file if line.strip()]
-            total_vms = len(vm_list)
-    except FileNotFoundError:
-        console.print(f"[bold red]Error: {host_file} file not found.[/bold red]")
+    if not os.path.exists(inventory_file):
+        console.print(f"[bold red]Error: Inventory file '{inventory_file}' not found.[/bold red]")
+        return
+
+    if not os.path.exists(host_file):
+        console.print(f"[bold red]Error: List file '{host_file}' not found.[/bold red]")
+        return
+
+    vm_list = []
+    with open(host_file, 'r') as f:
+        hostnames = f.read().splitlines()
+        for hostname in hostnames:
+            vm_info = get_vm_info(hostname, inventory_file)
+            if vm_info:
+                vm_list.append(vm_info)
+            else:
+                console.print(f"[bold yellow]Warning: Information not found for hostname '{hostname}'[/bold yellow]")
+
+    total_vms = len(vm_list)
+    if total_vms == 0:
+        console.print("[bold red]Error: No valid VM information found.[/bold red]")
         return
 
     grouped_vms = group_vms_by_subscription(vm_list)
