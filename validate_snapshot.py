@@ -43,7 +43,6 @@ def extract_snapshot_name(snapshot_id):
     return name_parts[0]
 
 def validate_snapshots(snapshot_list_file):
-    start_time = time.time()
     console.print(Panel.fit("[bold cyan]Starting snapshot validation...[/bold cyan]", border_style="cyan"))
 
     with open(snapshot_list_file, "r") as file:
@@ -52,9 +51,11 @@ def validate_snapshots(snapshot_list_file):
     total_snapshots = len(snapshot_ids)
     validated_snapshots = []
 
+    start_time = time.time()
+
     overall_progress = Progress(
         TextColumn("[progress.description]{task.description}"),
-        BarColumn(),
+        BarColumn(bar_width=None),
         TextColumn("[progress.percentage]{task.percentage:>3.0f}%"),
         TextColumn("{task.completed}/{task.total}"),
         TimeRemainingColumn(),
