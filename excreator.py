@@ -39,7 +39,7 @@ def get_vm_info(hostname, inventory_file):
                 return ','.join(row)
     return None
 
-def extract_vm_info(host_file):
+async def extract_vm_info(host_file):
     if not os.path.exists(inventory_file):
         console.print(f"[bold red]Error: Inventory file '{inventory_file}' not found.[/bold red]")
         return None
@@ -48,16 +48,30 @@ def extract_vm_info(host_file):
         console.print(f"[bold red]Error: Host file '{host_file}' not found.[/bold red]")
         return None
 
-    with open(host_file, 'r') as f:
-        hostnames = f.read().splitlines()
+    async with aiofiles.open(host_file, 'r') as f:
+        hostnames = await f.read()
+        hostnames = hostnames.splitlines()
 
+    if not hostnames:
+        console.print(f"[bold red]Error: No hostnames found in '{host_file}'.[/bold red]")
+        return None
+
+    loop = asyncio.get_event_loop()
     with ThreadPoolExecutor() as executor:
-        vm_list = list(executor.map(lambda hostname: get_vm_info(hostname, inventory_file), hostnames))
+        vm_list = await loop.run_in_executor(
+            executor,
+            lambda: list(map(lambda hostname: get_vm_info(hostname, inventory_file), hostnames))
+        )
 
     vm_list = [vm for vm in vm_list if vm is not None]
 
+    if not vm_list:
+        console.print("[bold red]Error: No valid VM information found.[/bold red]")
+        return None
+
     for hostname, vm_info in zip(hostnames, vm_list):
         if vm_info is None:
+            await write_log(f"Warning: Information not found for hostname '{hostname}'")
             console.print(f"[bold yellow]Warning: Information not found for hostname '{hostname}'[/bold yellow]")
 
     return vm_list
@@ -140,9 +154,9 @@ async def main():
     host_file = console.input("Please enter your host file (default: host): ") or "host"
     chg_number = console.input("Enter the CHG number: ")
     
-    write_log(f"CHG Number: {chg_number}")
+    await write_log(f"CHG Number: {chg_number}")
 
-    vm_list = extract_vm_info(host_file)
+    vm_list = await extract_vm_info(host_file)
     if vm_list is None:
         return
 
