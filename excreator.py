@@ -73,9 +73,9 @@ async def run_az_command(command, max_retries=3, delay=5):
                 await asyncio.sleep(delay)
     return "", stderr.decode().strip(), process.returncode
 
-def write_log(message):
-    with open(log_file, "a") as f:
-        f.write(f"{datetime.datetime.now()}: {message}\n")
+async def write_log(message):
+    async with aiofiles.open(log_file, "a") as f:
+        await f.write(f"{datetime.datetime.now()}: {message}\n")
 
 def write_snapshot_rid(snapshot_id):
     with open(snap_rid_list_file, "a") as f:
@@ -83,9 +83,9 @@ def write_snapshot_rid(snapshot_id):
 
 async def process_vm(resource_id, vm_name, resource_group, disk_id, progress, task):
     async with semaphore:
-        write_log(f"Processing VM: {vm_name}")
-        write_log(f"Resource ID: {resource_id}")
-        write_log(f"Resource group: {resource_group}")
+        await write_log(f"Processing VM: {vm_name}")
+        await write_log(f"Resource ID: {resource_id}")
+        await write_log(f"Resource group: {resource_group}")
 
         snapshot_name = f"RH_{chg_number}_{vm_name}_{timestamp}"
         stdout, stderr, returncode = await run_az_command(
