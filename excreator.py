@@ -40,39 +40,18 @@ def get_vm_info(hostname, inventory_file):
     return None
 
 async def extract_vm_info(host_file):
-    if not os.path.exists(inventory_file):
-        console.print(f"[bold red]Error: Inventory file '{inventory_file}' not found.[/bold red]")
+    snapshot_vmlist_file = 'snapshot_vmlist.txt'
+    if not os.path.exists(snapshot_vmlist_file):
+        console.print(f"[bold red]Error: Snapshot VM list file '{snapshot_vmlist_file}' not found.[/bold red]")
         return None
 
-    if not os.path.exists(host_file):
-        console.print(f"[bold red]Error: Host file '{host_file}' not found.[/bold red]")
-        return None
-
-    async with aiofiles.open(host_file, 'r') as f:
-        hostnames = await f.read()
-        hostnames = hostnames.splitlines()
-
-    if not hostnames:
-        console.print(f"[bold red]Error: No hostnames found in '{host_file}'.[/bold red]")
-        return None
-
-    loop = asyncio.get_event_loop()
-    with ThreadPoolExecutor() as executor:
-        vm_list = await loop.run_in_executor(
-            executor,
-            lambda: list(map(lambda hostname: get_vm_info(hostname, inventory_file), hostnames))
-        )
-
-    vm_list = [vm for vm in vm_list if vm is not None]
+    async with aiofiles.open(snapshot_vmlist_file, 'r') as f:
+        vm_list = await f.read()
+        vm_list = vm_list.splitlines()
 
     if not vm_list:
-        console.print("[bold red]Error: No valid VM information found.[/bold red]")
+        console.print(f"[bold red]Error: No VM information found in '{snapshot_vmlist_file}'.[/bold red]")
         return None
-
-    for hostname, vm_info in zip(hostnames, vm_list):
-        if vm_info is None:
-            await write_log(f"Warning: Information not found for hostname '{hostname}'")
-            console.print(f"[bold yellow]Warning: Information not found for hostname '{hostname}'[/bold yellow]")
 
     return vm_list
 
@@ -136,7 +115,7 @@ async def process_vm(resource_id, vm_name, resource_group, disk_id, progress, ta
 def group_vms_by_subscription(vm_list):
     grouped_vms = defaultdict(list)
     for line in vm_list:
-        resource_id, vm_name = line.split()
+        resource_id, vm_name = line.rsplit(None, 1)
         subscription_id = resource_id.split("/")[2]
         grouped_vms[subscription_id].append((resource_id, vm_name))
     return grouped_vms
