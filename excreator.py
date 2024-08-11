@@ -93,21 +93,21 @@ async def process_vm(resource_id, vm_name, resource_group, disk_id, progress, ta
         )
         
         if returncode != 0:
-            write_log(f"Failed to create snapshot for VM: {vm_name}")
-            write_log(f"Error: {stderr}")
+            await write_log(f"Failed to create snapshot for VM: {vm_name}")
+            await write_log(f"Error: {stderr}")
             failed_snapshots.append((vm_name, "Failed to create snapshot"))
         else:
-            write_log(f"Snapshot created: {snapshot_name}")
-            write_log(json.dumps(json.loads(stdout), indent=2))
+            await write_log(f"Snapshot created: {snapshot_name}")
+            await write_log(json.dumps(json.loads(stdout), indent=2))
             
             snapshot_data = json.loads(stdout)
             snapshot_id = snapshot_data.get('id')
             if snapshot_id:
                 write_snapshot_rid(snapshot_id)
-                write_log(f"Snapshot resource ID added to snap_rid_list.txt: {snapshot_id}")
+                await write_log(f"Snapshot resource ID added to snap_rid_list.txt: {snapshot_id}")
                 successful_snapshots.append((vm_name, snapshot_name))
             else:
-                write_log(f"Warning: Could not extract snapshot resource ID for {snapshot_name}")
+                await write_log(f"Warning: Could not extract snapshot resource ID for {snapshot_name}")
                 failed_snapshots.append((vm_name, "Failed to extract snapshot ID"))
 
         progress.update(task, completed=100)
@@ -166,15 +166,15 @@ async def main():
             # Switch to the current subscription
             stdout, stderr, returncode = await run_az_command(f"az account set --subscription {subscription_id}")
             if returncode != 0:
-                write_log(f"Failed to set subscription ID: {subscription_id}")
-                write_log(f"Error: {stderr}")
+                await write_log(f"Failed to set subscription ID: {subscription_id}")
+                await write_log(f"Error: {stderr}")
                 for _, vm_name in vms:
                     failed_snapshots.append((vm_name, "Failed to set subscription"))
                     progress.update(vm_tasks[vm_name], completed=100)
                     progress.update(overall_task, advance=1)
                 continue
 
-            write_log(f"Switched to subscription: {subscription_id}")
+            await write_log(f"Switched to subscription: {subscription_id}")
 
             tasks = []
             for resource_id, vm_name in vms:
@@ -183,8 +183,8 @@ async def main():
                     f"az vm show --ids {resource_id} --query '{{resourceGroup:resourceGroup, diskId:storageProfile.osDisk.managedDisk.id}}' -o json"
                 )
                 if returncode != 0:
-                    write_log(f"Failed to get VM details for {vm_name}")
-                    write_log(f"Error: {stderr}")
+                    await write_log(f"Failed to get VM details for {vm_name}")
+                    await write_log(f"Error: {stderr}")
                     failed_snapshots.append((vm_name, "Failed to get VM details"))
                     progress.update(vm_tasks[vm_name], completed=100)
                     progress.update(overall_task, advance=1)
