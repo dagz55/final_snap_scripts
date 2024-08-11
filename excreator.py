@@ -3,7 +3,11 @@ import asyncio
 import json
 import datetime
 import getpass
+import csv
 from collections import defaultdict
+from functools import lru_cache
+from concurrent.futures import ThreadPoolExecutor
+import aiofiles
 from rich.console import Console
 from rich.progress import Progress, SpinnerColumn, BarColumn, TextColumn
 from rich.live import Live
@@ -26,11 +30,13 @@ successful_snapshots = []
 failed_snapshots = []
 inventory_file = 'linux_vm-inventory.csv'
 
+@lru_cache(maxsize=None)
 def get_vm_info(hostname, inventory_file):
-    with open(inventory_file, 'r') as f:
-        for line in f:
-            if hostname in line:
-                return line.strip()
+    with open(inventory_file, 'r', newline='') as f:
+        reader = csv.reader(f)
+        for row in reader:
+            if hostname in row:
+                return ','.join(row)
     return None
 
 def extract_vm_info(host_file):
@@ -42,15 +48,17 @@ def extract_vm_info(host_file):
         console.print(f"[bold red]Error: Host file '{host_file}' not found.[/bold red]")
         return None
 
-    vm_list = []
     with open(host_file, 'r') as f:
         hostnames = f.read().splitlines()
-        for hostname in hostnames:
-            vm_info = get_vm_info(hostname, inventory_file)
-            if vm_info:
-                vm_list.append(vm_info)
-            else:
-                console.print(f"[bold yellow]Warning: Information not found for hostname '{hostname}'[/bold yellow]")
+
+    with ThreadPoolExecutor() as executor:
+        vm_list = list(executor.map(lambda hostname: get_vm_info(hostname, inventory_file), hostnames))
+
+    vm_list = [vm for vm in vm_list if vm is not None]
+
+    for hostname, vm_info in zip(hostnames, vm_list):
+        if vm_info is None:
+            console.print(f"[bold yellow]Warning: Information not found for hostname '{hostname}'[/bold yellow]")
 
     return vm_list
 
@@ -72,13 +80,13 @@ async def run_az_command(command, max_retries=3, delay=5):
                 await asyncio.sleep(delay)
     return "", stderr.decode().strip(), process.returncode
 
-def write_log(message):
-    with open(log_file, "a") as f:
-        f.write(f"{datetime.datetime.now()}: {message}\n")
+async def write_log(message):
+    async with aiofiles.open(log_file, "a") as f:
+        await f.write(f"{datetime.datetime.now()}: {message}\n")
 
-def write_snapshot_rid(snapshot_id):
-    with open(snap_rid_list_file, "a") as f:
-        f.write(f"{snapshot_id}\n")
+async def write_snapshot_rid(snapshot_id):
+    async with aiofiles.open(snap_rid_list_file, "a") as f:
+        await f.write(f"{snapshot_id}\n")
 
 async def process_vm(resource_id, vm_name, resource_group, disk_id, progress, task):
     async with semaphore:
