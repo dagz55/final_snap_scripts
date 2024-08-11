@@ -63,7 +63,7 @@ def validate_snapshots(snapshot_list_file):
 
     snapshot_progress = Progress(
         TextColumn("[progress.description]{task.description}"),
-        SpinnerColumn(),
+        SpinnerColumn(style="aesthetic"),
         TextColumn("{task.completed}/{task.total}"),
         TimeRemainingColumn(),
         expand=True
