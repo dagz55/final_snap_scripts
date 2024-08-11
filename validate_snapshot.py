@@ -108,6 +108,9 @@ def validate_snapshots(snapshot_list_file):
             end_time = time.time()
             validation_time = end_time - start_time
             snapshot_progress.update(current_task, description=f"Validated: {snapshot_name:<50} in {validation_time:.2f}s", completed=1)
+            
+            # Add a small delay to keep the spinner visible
+            time.sleep(0.5)
 
     end_time = time.time()
     runtime = end_time - start_time
