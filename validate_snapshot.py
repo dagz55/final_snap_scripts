@@ -117,16 +117,22 @@ def validate_snapshots(snapshot_list_file):
 
     console.print("\n")  # Add a newline for separation
 
-    # Create and display the table with snapshot names
-    table = Table(title="Snapshot Validation Results", box=box.ROUNDED)
-    table.add_column("Snapshot Name", style="cyan")
-    table.add_column("Status", style="magenta", justify="center")
+    # Create and display two separate tables for existing and missing snapshots
+    existing_table = Table(title="Existing Snapshots", box=box.ROUNDED)
+    existing_table.add_column("Snapshot Name", style="cyan")
+    existing_table.add_column("Status", style="green", justify="center")
+
+    missing_table = Table(title="Missing Snapshots", box=box.ROUNDED)
+    missing_table.add_column("Snapshot Name", style="cyan")
+    missing_table.add_column("Status", style="red", justify="center")
 
     for snapshot in validated_snapshots:
-        status = "[green]✓[/green]" if snapshot['exists'] else "[red]✗[/red]"
-        table.add_row(snapshot['name'], status)
+        if snapshot['exists']:
+            existing_table.add_row(snapshot['name'], "✓")
+        else:
+            missing_table.add_row(snapshot['name'], "✗")
 
-    console.print(Panel(table, expand=False, border_style="green"))
+    console.print(Panel(Group(existing_table, missing_table), expand=False, border_style="green"))
 
     # Create summary table
     summary_table = Table(title="Snapshot Validation Summary", box=box.ROUNDED)
