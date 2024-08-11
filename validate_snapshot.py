@@ -7,7 +7,7 @@ import time
 from rich.console import Console, Group
 from rich.table import Table
 from rich.prompt import Confirm
-from rich.progress import Progress, BarColumn, TextColumn, TimeRemainingColumn
+from rich.progress import Progress, BarColumn, TextColumn, TimeRemainingColumn, SpinnerColumn
 from rich.panel import Panel
 from rich import box
 from rich.live import Live
@@ -63,8 +63,7 @@ def validate_snapshots(snapshot_list_file):
 
     snapshot_progress = Progress(
         TextColumn("[progress.description]{task.description}"),
-        BarColumn(),
-        TextColumn("[progress.percentage]{task.percentage:>3.0f}%"),
+        SpinnerColumn(),
         TextColumn("{task.completed}/{task.total}"),
         TimeRemainingColumn(),
         expand=True
