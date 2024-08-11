@@ -52,7 +52,7 @@ def validate_snapshots(snapshot_list_file):
     total_snapshots = len(snapshot_ids)
     validated_snapshots = []
 
-    progress = Progress(
+    overall_progress = Progress(
         TextColumn("[progress.description]{task.description}"),
         BarColumn(),
         TextColumn("[progress.percentage]{task.percentage:>3.0f}%"),
@@ -61,16 +61,30 @@ def validate_snapshots(snapshot_list_file):
         expand=True
     )
 
-    overall_task = progress.add_task("[green]Overall progress", total=total_snapshots)
-    current_task = progress.add_task("Validating snapshot", total=1, visible=True)
+    snapshot_progress = Progress(
+        TextColumn("[progress.description]{task.description}"),
+        BarColumn(),
+        TextColumn("[progress.percentage]{task.percentage:>3.0f}%"),
+        TextColumn("{task.completed}/{task.total}"),
+        TimeRemainingColumn(),
+        expand=True
+    )
 
-    with Live(progress, refresh_per_second=10) as live:
+    overall_task = overall_progress.add_task("[green]Overall progress", total=total_snapshots)
+    current_task = snapshot_progress.add_task("Validating snapshot", total=1, visible=True)
+
+    progress_group = Group(
+        Panel(overall_progress, title="Overall Progress", border_style="green"),
+        Panel(snapshot_progress, title="Current Snapshot", border_style="blue")
+    )
+
+    with Live(progress_group, refresh_per_second=10) as live:
         for snapshot_id in snapshot_ids:
             snapshot_name = extract_snapshot_name(snapshot_id)
             snapshot_info = {'id': snapshot_id, 'exists': False, 'name': snapshot_name}
 
             start_time = time.time()
-            progress.update(current_task, description=f"Validating snapshot: {snapshot_name}", visible=True)
+            snapshot_progress.update(current_task, description=f"Validating: {snapshot_name}", completed=0)
 
             details = run_az_command(f"az snapshot show --ids {snapshot_id} --query '{{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}}' -o json")
 
@@ -90,14 +104,16 @@ def validate_snapshots(snapshot_list_file):
                 snapshot_info['name'] = f"Not found: {snapshot_name}"
 
             validated_snapshots.append(snapshot_info)
-            progress.update(overall_task, advance=1)
+            overall_progress.update(overall_task, advance=1)
             
             end_time = time.time()
             validation_time = end_time - start_time
-            progress.update(current_task, description=f"Validated snapshot: {snapshot_name} in {validation_time:.2f}s")
+            snapshot_progress.update(current_task, description=f"Validated: {snapshot_name} in {validation_time:.2f}s", completed=1)
 
     end_time = time.time()
     runtime = end_time - start_time
+
+    console.print("\n")  # Add a newline for separation
 
     # Create and display the table with snapshot names
     table = Table(title="Snapshot Validation Results", box=box.ROUNDED)
