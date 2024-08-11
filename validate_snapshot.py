@@ -63,7 +63,7 @@ def validate_snapshots(snapshot_list_file):
 
     snapshot_progress = Progress(
         TextColumn("[progress.description]{task.description}"),
-        SpinnerColumn(style="aesthetic"),
+        SpinnerColumn(spinner_name="aesthetic"),
         TextColumn("{task.completed}/{task.total}"),
         TimeRemainingColumn(),
         expand=True
@@ -83,7 +83,7 @@ def validate_snapshots(snapshot_list_file):
             snapshot_info = {'id': snapshot_id, 'exists': False, 'name': snapshot_name}
 
             start_time = time.time()
-            snapshot_progress.update(current_task, description=f"Validating: {snapshot_name}", completed=0)
+            snapshot_progress.update(current_task, description=f"Validating: {snapshot_name:<50}", completed=0)
 
             details = run_az_command(f"az snapshot show --ids {snapshot_id} --query '{{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}}' -o json")
 
@@ -107,7 +107,7 @@ def validate_snapshots(snapshot_list_file):
             
             end_time = time.time()
             validation_time = end_time - start_time
-            snapshot_progress.update(current_task, description=f"Validated: {snapshot_name} in {validation_time:.2f}s", completed=1)
+            snapshot_progress.update(current_task, description=f"Validated: {snapshot_name:<50} in {validation_time:.2f}s", completed=1)
 
     end_time = time.time()
     runtime = end_time - start_time
