@@ -4,7 +4,7 @@ import json
 import os
 import getpass
 import time
-from rich.console import Console
+from rich.console import Console, Group
 from rich.table import Table
 from rich.prompt import Confirm
 from rich.progress import Progress, BarColumn, TextColumn, TimeRemainingColumn
