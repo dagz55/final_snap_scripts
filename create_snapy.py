@@ -154,7 +154,6 @@ async def main(host_file=None, input_chg_number=None):
 
             await write_log(f"Switched to subscription: {subscription_id}")
 
-            tasks = []
             for resource_id, vm_name in vms:
                 # Get resource group and disk ID for each VM
                 stdout, stderr, returncode = await run_az_command(
@@ -173,20 +172,15 @@ async def main(host_file=None, input_chg_number=None):
                 disk_id = vm_details["diskId"]
 
                 vm_task = vm_progress.add_task(f"Processing: {vm_name}", total=100)
-                task = asyncio.create_task(
-                    process_vm(
-                        resource_id,
-                        vm_name,
-                        resource_group,
-                        disk_id,
-                        vm_progress,
-                        vm_task,
-                    )
+                await process_vm(
+                    resource_id,
+                    vm_name,
+                    resource_group,
+                    disk_id,
+                    vm_progress,
+                    vm_task,
                 )
-                tasks.append(task)
-
-            await asyncio.gather(*tasks)
-            overall_progress.update(overall_task, advance=len(vms))
+                overall_progress.update(overall_task, advance=1)
 
         # Ensure the progress bars are fully updated
         overall_progress.update(overall_task, completed=total_vms)
