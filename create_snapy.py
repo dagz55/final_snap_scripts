@@ -190,8 +190,8 @@ async def main(host_file=None, input_chg_number=None):
 
         # Ensure the progress bars are fully updated
         overall_progress.update(overall_task, completed=total_vms)
-        for task in vm_progress.tasks:
-            vm_progress.update(task, completed=100)
+        for task_id in vm_progress.task_ids:
+            vm_progress.update(task_id, completed=100)
 
     end_time = time.time()
     runtime = end_time - start_time
