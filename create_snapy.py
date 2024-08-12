@@ -8,6 +8,7 @@ from rich.panel import Panel
 from rich.progress import BarColumn, Progress, SpinnerColumn, TextColumn, TimeRemainingColumn
 from rich.table import Table
 from rich.console import Group
+from rich import box
 from common import console, LOG_DIR, write_log, extract_vm_info, run_az_command
 
 # Import shared components from common.py
@@ -15,6 +16,7 @@ from common import (
     SUMMARY_FILE,
     SNAP_RID_LIST_FILE,
     TIMESTAMP,
+    LOG_FILE,
 )
 
 # Global variables
