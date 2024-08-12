@@ -1,5 +1,7 @@
 import json
 import time
+import sys
+import asyncio
 from rich import box
 from rich.console import Group
 from rich.live import Live
@@ -11,10 +13,11 @@ from rich.table import Table
 # Import shared components from common.py
 from common import (
     console, USER_ID, LOG_DIR, LOG_FILE, SUMMARY_FILE, SNAP_RID_LIST_FILE,
-    INVENTORY_FILE, error_log_file, run_az_command, log_error, extract_snapshot_name
+    INVENTORY_FILE, error_log_file, run_az_command, log_error, extract_snapshot_name,
+    write_log
 )
 
-def validate_snapshots(snapshot_list_file):
+async def validate_snapshots(snapshot_list_file):
     console.print(
         Panel.fit(
             "[bold cyan]Starting snapshot validation...[/bold cyan]",
@@ -70,13 +73,13 @@ def validate_snapshots(snapshot_list_file):
                 completed=0,
             )
 
-            details = run_az_command(
+            stdout, stderr, returncode = await run_az_command(
                 f"az snapshot show --ids {snapshot_id} --query '{{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}}' -o json"
             )
 
-            if details:
+            if returncode == 0:
                 try:
-                    details = json.loads(details)
+                    details = json.loads(stdout)
                     snapshot_info.update(
                         {
                             "exists": True,
@@ -87,9 +90,12 @@ def validate_snapshots(snapshot_list_file):
                         }
                     )
                 except json.JSONDecodeError:
+                    await write_log(f"Failed to parse JSON for snapshot: {snapshot_id}")
                     log_error(f"Failed to parse JSON for snapshot: {snapshot_id}")
             else:
                 snapshot_info["name"] = f"Not found: {snapshot_name}"
+                await write_log(f"Failed to get details for snapshot: {snapshot_id}")
+                await write_log(f"Error: {stderr}")
 
             validated_snapshots.append(snapshot_info)
             overall_progress.update(overall_task, advance=1)
@@ -192,9 +198,14 @@ def validate_snapshots(snapshot_list_file):
         )
     )
 
+async def main(snapshot_list_file=None):
+    if snapshot_list_file is None:
+        snapshot_list_file = (
+            console.input("Enter the path to the snapshot list file (default: snap_rid_list.txt): ")
+            or "snap_rid_list.txt"
+        )
+    await validate_snapshots(snapshot_list_file)
+
 if __name__ == "__main__":
-    snapshot_list_file = (
-        input("Enter the path to the snapshot list file (default: snap_rid_list.txt): ")
-        or "snap_rid_list.txt"
-    )
-    validate_snapshots(snapshot_list_file)
+    snapshot_list_file = sys.argv[1] if len(sys.argv) > 1 else None
+    asyncio.run(main(snapshot_list_file))

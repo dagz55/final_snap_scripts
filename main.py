@@ -14,7 +14,7 @@ async def run_script(script_name):
         cmd.extend([host_file, chg_number])
     elif script_name == 'validate_snapy.py':
         snapshot_list_file = input("Enter the path to the snapshot list file (default: snap_rid_list.txt): ") or "snap_rid_list.txt"
-        cmd.append(snapshot_list_file)
+        cmd.extend([snapshot_list_file])
     elif script_name == 'delete_snapy.py':
         snapshot_list_file = input("Enter the filename with snapshot IDs (default: snap_rid_list.txt): ") or "snap_rid_list.txt"
         cmd.append(snapshot_list_file)
