@@ -2,6 +2,7 @@ import os
 import sys
 import asyncio
 import json
+import time
 from collections import defaultdict
 from rich.live import Live
 from rich.panel import Panel
@@ -85,6 +86,8 @@ async def main(host_file=None, input_chg_number=None):
     global chg_number
     console.print("[cyan]Azure Snapshot Creator[/cyan]")
     console.print("=========================")
+
+    start_time = time.time()
 
     # Create log directory
     os.makedirs(LOG_DIR, exist_ok=True)
@@ -185,6 +188,14 @@ async def main(host_file=None, input_chg_number=None):
             await asyncio.gather(*tasks)
             overall_progress.update(overall_task, advance=len(vms))
 
+        # Ensure the progress bars are fully updated
+        overall_progress.update(overall_task, completed=total_vms)
+        for task in vm_progress.tasks:
+            vm_progress.update(task, completed=100)
+
+    end_time = time.time()
+    runtime = end_time - start_time
+
     # Display summary table
     console.print("\n")
     table = Table(title="Snapshot Creation Summary", box=box.ROUNDED)
@@ -193,6 +204,7 @@ async def main(host_file=None, input_chg_number=None):
     table.add_row("Total VMs Processed", str(total_vms))
     table.add_row("Successful Snapshots", str(len(successful_snapshots)))
     table.add_row("Failed Snapshots", str(len(failed_snapshots)))
+    table.add_row("Runtime", f"{runtime:.2f} seconds")
     console.print(table)
 
     # Calculate total_vms
@@ -203,7 +215,8 @@ async def main(host_file=None, input_chg_number=None):
         f.write("=========================\n\n")
         f.write(f"Total VMs processed: {total_vms}\n")
         f.write(f"Successful snapshots: {len(successful_snapshots)}\n")
-        f.write(f"Failed snapshots: {len(failed_snapshots)}\n\n")
+        f.write(f"Failed snapshots: {len(failed_snapshots)}\n")
+        f.write(f"Runtime: {runtime:.2f} seconds\n\n")
 
         f.write("Failed Snapshots:\n")
         for vm, error in failed_snapshots:
