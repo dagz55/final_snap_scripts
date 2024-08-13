@@ -23,7 +23,7 @@ from common import (
 # Global variables
 chg_number = ""
 expire_days = 3
-semaphore = asyncio.Semaphore(10)
+semaphore = asyncio.Semaphore(20)  # Increased concurrency
 successful_snapshots = []
 failed_snapshots = []
 
@@ -36,14 +36,11 @@ def write_snapshot_rid(snapshot_id):
 async def process_vm(resource_id, vm_name, resource_group, disk_id, progress, task):
     async with semaphore:
         await write_log(f"Processing VM: {vm_name}")
-        await write_log(f"Resource ID: {resource_id}")
-        await write_log(f"Resource group: {resource_group}")
-
         snapshot_name = f"RH_{chg_number}_{vm_name}_{TIMESTAMP}"
         progress.update(task, description=f"Creating snapshot: {snapshot_name}")
-        stdout, stderr, returncode = await run_az_command(
-            f"az snapshot create --name {snapshot_name} --resource-group {resource_group} --source {disk_id}"
-        )
+        
+        cmd = f"az snapshot create --name {snapshot_name} --resource-group {resource_group} --source {disk_id} --output json"
+        stdout, stderr, returncode = await run_az_command(cmd)
 
         if returncode != 0:
             await write_log(f"Failed to create snapshot for VM: {vm_name}")
@@ -51,22 +48,15 @@ async def process_vm(resource_id, vm_name, resource_group, disk_id, progress, ta
             failed_snapshots.append((vm_name, "Failed to create snapshot"))
             progress.update(task, description=f"[red]Failed: {vm_name}[/red]")
         else:
-            await write_log(f"Snapshot created: {snapshot_name}")
-            await write_log(json.dumps(json.loads(stdout), indent=2))
-
             snapshot_data = json.loads(stdout)
             snapshot_id = snapshot_data.get("id")
             if snapshot_id:
                 write_snapshot_rid(snapshot_id)
-                await write_log(
-                    f"Snapshot resource ID added to snap_rid_list.txt: {snapshot_id}"
-                )
+                await write_log(f"Snapshot created: {snapshot_name}")
                 successful_snapshots.append((vm_name, snapshot_name))
                 progress.update(task, description=f"[green]Success: {vm_name}[/green]")
             else:
-                await write_log(
-                    f"Warning: Could not extract snapshot resource ID for {snapshot_name}"
-                )
+                await write_log(f"Warning: Could not extract snapshot resource ID for {snapshot_name}")
                 failed_snapshots.append((vm_name, "Failed to extract snapshot ID"))
                 progress.update(task, description=f"[yellow]Warning: {vm_name}[/yellow]")
 
@@ -80,6 +70,14 @@ def group_vms_by_subscription(vm_list):
         subscription_id = resource_id.split("/")[2]
         grouped_vms[subscription_id].append((resource_id, vm_name))
     return grouped_vms
+
+
+async def get_vm_details(resource_id):
+    cmd = f"az vm show --ids {resource_id} --query '{{resourceGroup:resourceGroup, diskId:storageProfile.osDisk.managedDisk.id}}' -o json"
+    stdout, stderr, returncode = await run_az_command(cmd)
+    if returncode == 0:
+        return json.loads(stdout)
+    return None
 
 
 async def main(host_file=None, input_chg_number=None):
@@ -125,7 +123,7 @@ async def main(host_file=None, input_chg_number=None):
     vm_progress = Progress(
         TextColumn("[progress.description]{task.description}"),
         BarColumn(bar_width=None),
-        TextColumn("{task.completed:.0f}/{task.total:.0f}"),
+        TextColumn("[progress.percentage]{task.percentage:>3.0f}%"),
         TimeRemainingColumn(),
         expand=True,
     )
@@ -148,39 +146,42 @@ async def main(host_file=None, input_chg_number=None):
                 await write_log(f"Error: {stderr}")
                 for _, vm_name in vms:
                     failed_snapshots.append((vm_name, "Failed to set subscription"))
-                    vm_progress.add_task(f"[red]Failed: {vm_name}[/red]", total=1, completed=1)
+                    vm_progress.add_task(f"[red]Failed: {vm_name}[/red]", total=100, completed=100)
                     overall_progress.update(overall_task, advance=1)
                 continue
 
             await write_log(f"Switched to subscription: {subscription_id}")
 
-            for resource_id, vm_name in vms:
-                # Get resource group and disk ID for each VM
-                stdout, stderr, returncode = await run_az_command(
-                    f"az vm show --ids {resource_id} --query '{{resourceGroup:resourceGroup, diskId:storageProfile.osDisk.managedDisk.id}}' -o json"
-                )
-                if returncode != 0:
+            # Fetch VM details concurrently
+            vm_details_tasks = [get_vm_details(resource_id) for resource_id, _ in vms]
+            vm_details_results = await asyncio.gather(*vm_details_tasks)
+
+            # Process VMs concurrently
+            vm_tasks = []
+            for (resource_id, vm_name), vm_details in zip(vms, vm_details_results):
+                if vm_details is None:
                     await write_log(f"Failed to get VM details for {vm_name}")
-                    await write_log(f"Error: {stderr}")
                     failed_snapshots.append((vm_name, "Failed to get VM details"))
-                    vm_progress.add_task(f"[red]Failed: {vm_name}[/red]", total=1, completed=1)
+                    vm_progress.add_task(f"[red]Failed: {vm_name}[/red]", total=100, completed=100)
                     overall_progress.update(overall_task, advance=1)
                     continue
 
-                vm_details = json.loads(stdout)
                 resource_group = vm_details["resourceGroup"]
                 disk_id = vm_details["diskId"]
 
                 vm_task = vm_progress.add_task(f"Processing: {vm_name}", total=100)
-                await process_vm(
+                vm_tasks.append(process_vm(
                     resource_id,
                     vm_name,
                     resource_group,
                     disk_id,
                     vm_progress,
                     vm_task,
-                )
-                overall_progress.update(overall_task, advance=1)
+                ))
+
+            # Wait for all VM tasks to complete
+            await asyncio.gather(*vm_tasks)
+            overall_progress.update(overall_task, advance=len(vm_tasks))
 
         # Ensure the progress bars are fully updated
         overall_progress.update(overall_task, completed=total_vms)
