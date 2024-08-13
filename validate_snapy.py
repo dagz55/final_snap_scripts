@@ -26,9 +26,13 @@ async def validate_snapshots(snapshot_list_file):
     )
 
     with open(snapshot_list_file, "r") as file:
-        snapshot_ids = file.read().splitlines()
+        snapshot_ids = [line.strip() for line in file if line.strip()]
 
     total_snapshots = len(snapshot_ids)
+    if total_snapshots == 0:
+        console.print("[bold red]Error: No valid snapshot IDs found in the file.[/bold red]")
+        return
+
     validated_snapshots = []
 
     overall_progress = Progress(
@@ -73,9 +77,14 @@ async def validate_snapshots(snapshot_list_file):
                 completed=0,
             )
 
-            stdout, stderr, returncode = await run_az_command(
-                f"az snapshot show --ids {snapshot_id} --query '{{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}}' -o json"
-            )
+            if snapshot_id.strip():
+                stdout, stderr, returncode = await run_az_command(
+                    f"az snapshot show --ids {snapshot_id} --query '{{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}}' -o json"
+                )
+            else:
+                returncode = 1
+                stderr = "Empty snapshot ID"
+                stdout = None
 
             if returncode == 0:
                 try:
