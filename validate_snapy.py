@@ -81,30 +81,27 @@ async def validate_snapshots(snapshot_list_file):
                 stdout, stderr, returncode = await run_az_command(
                     f"az snapshot show --ids {snapshot_id} --query '{{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}}' -o json"
                 )
+                if returncode == 0:
+                    try:
+                        details = json.loads(stdout)
+                        snapshot_info.update(
+                            {
+                                "exists": True,
+                                "resource_group": details["resourceGroup"],
+                                "time_created": details["timeCreated"],
+                                "size_gb": details["diskSizeGb"],
+                                "state": details["provisioningState"],
+                            }
+                        )
+                    except json.JSONDecodeError:
+                        await write_log(f"Failed to parse JSON for snapshot: {snapshot_id}")
+                        log_error(f"Failed to parse JSON for snapshot: {snapshot_id}")
+                else:
+                    snapshot_info["name"] = f"Not found: {snapshot_name}"
+                    await write_log(f"Snapshot not found: {snapshot_id}")
             else:
-                returncode = 1
-                stderr = "Empty snapshot ID"
-                stdout = None
-
-            if returncode == 0:
-                try:
-                    details = json.loads(stdout)
-                    snapshot_info.update(
-                        {
-                            "exists": True,
-                            "resource_group": details["resourceGroup"],
-                            "time_created": details["timeCreated"],
-                            "size_gb": details["diskSizeGb"],
-                            "state": details["provisioningState"],
-                        }
-                    )
-                except json.JSONDecodeError:
-                    await write_log(f"Failed to parse JSON for snapshot: {snapshot_id}")
-                    log_error(f"Failed to parse JSON for snapshot: {snapshot_id}")
-            else:
-                snapshot_info["name"] = f"Not found: {snapshot_name}"
-                await write_log(f"Failed to get details for snapshot: {snapshot_id}")
-                await write_log(f"Error: {stderr}")
+                snapshot_info["name"] = f"Invalid: {snapshot_name}"
+                await write_log(f"Invalid snapshot ID: {snapshot_id}")
 
             validated_snapshots.append(snapshot_info)
             overall_progress.update(overall_task, advance=1)
