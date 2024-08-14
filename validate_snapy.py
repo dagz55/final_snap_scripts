@@ -5,9 +5,6 @@ import json
 import os
 import sys
 import time
-from azure.identity.aio import DefaultAzureCredential
-from azure.mgmt.compute.aio import ComputeManagementClient
-from azure.core.exceptions import ResourceNotFoundError
 from rich.console import Console
 from rich.table import Table
 from rich import box
@@ -16,6 +13,20 @@ from rich.progress import Progress, SpinnerColumn, TextColumn, BarColumn, TaskPr
 from rich.prompt import Confirm
 
 console = Console()
+
+async def run_az_command(command):
+    process = await asyncio.create_subprocess_shell(
+        command,
+        stdout=asyncio.subprocess.PIPE,
+        stderr=asyncio.subprocess.PIPE
+    )
+    stdout, stderr = await process.communicate()
+    if process.returncode == 0:
+        return stdout.decode().strip()
+    else:
+        console.print(f"[red]Error running command: {command}[/red]")
+        console.print(f"[red]Error message: {stderr.decode().strip()}[/red]")
+        return None
 
 # Extract SUBSCRIPTION_ID and RESOURCE_GROUP_NAME from snap_rid_list.txt
 SUBSCRIPTION_ID = None
@@ -73,35 +84,31 @@ async def validate_snapshots(snapshot_list_file):
         )
     )
 
-    credential = DefaultAzureCredential()
     start_time = time.time()
     
-    snapshot_names = []
     with open(snapshot_list_file, "r") as file:
-        for line in file:
-            snapshot_names.append(extract_snapshot_name(line.strip()))
-    total_snapshots = len(snapshot_names)
+        snapshot_ids = file.read().splitlines()
+    total_snapshots = len(snapshot_ids)
 
     validated_snapshots = []
-    errors = []
 
-    async with ComputeManagementClient(credential, SUBSCRIPTION_ID) as compute_client:
-        with Progress(
-            SpinnerColumn(),
-            TextColumn("[progress.description]{task.description}"),
-            BarColumn(),
-            TaskProgressColumn(),
-            console=console,
-        ) as progress:
-            overall_task = progress.add_task("[cyan]Processing snapshots...", total=total_snapshots)
-            snapshot_tasks = []
+    with Progress(
+        SpinnerColumn(),
+        TextColumn("[progress.description]{task.description}"),
+        BarColumn(),
+        TaskProgressColumn(),
+        console=console,
+    ) as progress:
+        overall_task = progress.add_task("[cyan]Processing snapshots...", total=total_snapshots)
+        snapshot_tasks = []
 
-            for snapshot_name in snapshot_names:
-                snapshot_task = progress.add_task(f"Validating: {snapshot_name}", total=100)
-                snapshot_tasks.append(validate_snapshot(snapshot_name, compute_client, progress, snapshot_task))
+        for snapshot_id in snapshot_ids:
+            snapshot_name = extract_snapshot_name(snapshot_id)
+            snapshot_task = progress.add_task(f"Validating: {snapshot_name}", total=100)
+            snapshot_tasks.append(validate_snapshot(snapshot_id, progress, snapshot_task))
 
-            validated_snapshots = await asyncio.gather(*snapshot_tasks)
-            progress.update(overall_task, completed=total_snapshots)
+        validated_snapshots = await asyncio.gather(*snapshot_tasks)
+        progress.update(overall_task, completed=total_snapshots)
 
     end_time = time.time()
     runtime = end_time - start_time
@@ -153,30 +160,31 @@ async def validate_snapshots(snapshot_list_file):
         )
     )
 
-async def validate_snapshot(snapshot_name, compute_client, progress, task):
+async def validate_snapshot(snapshot_id, progress, task):
     try:
-        # List all snapshots across all resource groups
-        async for snapshot in compute_client.snapshots.list_all():
-            if snapshot.name == snapshot_name:
-                progress.update(task, advance=100)
-                return {
-                    "name": snapshot_name,
-                    "exists": True,
-                    "resource_group": snapshot.id.split('/')[4],  # Extract resource group from the ID
-                    "time_created": str(snapshot.time_created),
-                    "size_gb": snapshot.disk_size_gb,
-                    "state": snapshot.provisioning_state,
-                }
+        command = f"az snapshot show --ids {snapshot_id} --query '{{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}}' -o json"
+        result = await run_az_command(command)
         
-        # If the loop completes without finding the snapshot, it doesn't exist
-        progress.update(task, advance=100)
-        return {"name": snapshot_name, "exists": False}
+        if result:
+            snapshot_info = json.loads(result)
+            progress.update(task, advance=100)
+            return {
+                "name": snapshot_info['name'],
+                "exists": True,
+                "resource_group": snapshot_info['resourceGroup'],
+                "time_created": snapshot_info['timeCreated'],
+                "size_gb": snapshot_info['diskSizeGb'],
+                "state": snapshot_info['provisioningState'],
+            }
+        else:
+            progress.update(task, advance=100)
+            return {"name": extract_snapshot_name(snapshot_id), "exists": False}
     except Exception as e:
         progress.update(task, advance=100)
-        error_message = f"Error validating snapshot {snapshot_name}: {str(e)}"
+        error_message = f"Error validating snapshot {snapshot_id}: {str(e)}"
         log_error(error_message)
         console.print(f"[bold red]Error:[/bold red] {error_message}")
-        return {"name": snapshot_name, "exists": False, "error": error_message}
+        return {"name": extract_snapshot_name(snapshot_id), "exists": False, "error": error_message}
 
 if __name__ == "__main__":
     snapshot_list_file = sys.argv[1] if len(sys.argv) > 1 else "snap_rid_list.txt"
