@@ -10,7 +10,7 @@ from rich.table import Table
 from rich import box
 from rich.panel import Panel
 from rich.progress import Progress, SpinnerColumn, TextColumn, BarColumn, TaskProgressColumn
-from rich.prompt import Confirm
+from rich.prompt import Confirm, Prompt
 
 console = Console()
 
@@ -160,6 +160,11 @@ async def validate_snapshots(snapshot_list_file):
         )
     )
 
+    # Offer to move invalid snapshots
+    if sum(1 for s in validated_snapshots if not s["exists"]) > 0:
+        if Confirm.ask("Do you want to move invalid snapshots to a separate file?"):
+            move_invalid_snapshots(validated_snapshots, snapshot_list_file)
+
 async def validate_snapshot(snapshot_id, progress, task):
     try:
         command = f"az snapshot show --ids {snapshot_id} --query '{{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}}' -o json"
@@ -185,6 +190,22 @@ async def validate_snapshot(snapshot_id, progress, task):
         log_error(error_message)
         console.print(f"[bold red]Error:[/bold red] {error_message}")
         return {"name": extract_snapshot_name(snapshot_id), "exists": False, "error": error_message}
+
+def move_invalid_snapshots(validated_snapshots, snapshot_list_file):
+    invalid_snapshots = [s["id"] for s in validated_snapshots if not s["exists"]]
+    valid_snapshots = [s["id"] for s in validated_snapshots if s["exists"]]
+
+    # Write invalid snapshots to new file
+    invalid_file = "invalid_snap_rid.txt"
+    with open(invalid_file, "w") as f:
+        f.write("\n".join(invalid_snapshots))
+
+    # Overwrite original file with only valid snapshots
+    with open(snapshot_list_file, "w") as f:
+        f.write("\n".join(valid_snapshots))
+
+    console.print(f"[green]Invalid snapshots moved to {invalid_file}[/green]")
+    console.print(f"[green]Valid snapshots remain in {snapshot_list_file}[/green]")
 
 if __name__ == "__main__":
     snapshot_list_file = sys.argv[1] if len(sys.argv) > 1 else "snap_rid_list.txt"
