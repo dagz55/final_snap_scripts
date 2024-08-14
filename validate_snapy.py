@@ -16,21 +16,18 @@ from rich.prompt import Confirm
 
 console = Console()
 
-# Add these constants
-SUBSCRIPTION_ID = os.environ.get('AZURE_SUBSCRIPTION_ID')
-RESOURCE_GROUP_NAME = os.environ.get('AZURE_RESOURCE_GROUP')
+# Extract SUBSCRIPTION_ID and RESOURCE_GROUP_NAME from snap_rid_list.txt
+with open('snap_rid_list.txt', 'r') as f:
+    first_line = f.readline().strip()
+    parts = first_line.split('/')
+    SUBSCRIPTION_ID = parts[2]
+    RESOURCE_GROUP_NAME = parts[4]
 
-if not SUBSCRIPTION_ID:
-    SUBSCRIPTION_ID = console.input("[yellow]AZURE_SUBSCRIPTION_ID not set. Please enter your Azure Subscription ID: [/yellow]")
-    os.environ['AZURE_SUBSCRIPTION_ID'] = SUBSCRIPTION_ID
+console.print(f"[green]Using Subscription ID: {SUBSCRIPTION_ID}[/green]")
+console.print(f"[green]Using Resource Group: {RESOURCE_GROUP_NAME}[/green]")
 
-if not RESOURCE_GROUP_NAME:
-    RESOURCE_GROUP_NAME = console.input("[yellow]AZURE_RESOURCE_GROUP not set. Please enter your Azure Resource Group name: [/yellow]")
-    os.environ['AZURE_RESOURCE_GROUP'] = RESOURCE_GROUP_NAME
-
-if not SUBSCRIPTION_ID or not RESOURCE_GROUP_NAME:
-    console.print("[bold red]Error: AZURE_SUBSCRIPTION_ID and AZURE_RESOURCE_GROUP must be provided.[/bold red]")
-    sys.exit(1)
+os.environ['AZURE_SUBSCRIPTION_ID'] = SUBSCRIPTION_ID
+os.environ['AZURE_RESOURCE_GROUP'] = RESOURCE_GROUP_NAME
 
 user_uid = getpass.getuser()
 
