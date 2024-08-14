@@ -10,6 +10,7 @@ from azure.mgmt.compute.aio import ComputeManagementClient
 from azure.core.exceptions import ResourceNotFoundError
 from rich.console import Console
 from rich.table import Table
+from rich import box
 from rich.panel import Panel
 from rich.progress import Progress, SpinnerColumn, TextColumn, BarColumn, TaskProgressColumn
 from rich.prompt import Confirm
@@ -105,7 +106,7 @@ async def validate_snapshots(snapshot_list_file):
 
     # Display summary table
     console.print("\n")
-    summary_table = Table(title="Snapshot Validation Summary", box="rounded")
+    summary_table = Table(title="Snapshot Validation Summary", box=box.ROUNDED)
     summary_table.add_column("Category", style="cyan")
     summary_table.add_column("Count", style="magenta")
     summary_table.add_row("Total snapshots processed", str(total_snapshots))
