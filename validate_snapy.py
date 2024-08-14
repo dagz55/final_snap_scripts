@@ -74,9 +74,8 @@ async def validate_snapshots(snapshot_list_file):
     )
 
     credential = DefaultAzureCredential()
-    compute_client = ComputeManagementClient(credential, SUBSCRIPTION_ID)
-
-    start_time = time.time()
+    async with ComputeManagementClient(credential, SUBSCRIPTION_ID) as compute_client:
+        start_time = time.time()
     
     snapshot_names = []
     with open(snapshot_list_file, "r") as file:
@@ -156,7 +155,7 @@ async def validate_snapshots(snapshot_list_file):
 
 async def validate_snapshot(snapshot_name, compute_client, progress, task):
     try:
-        # Try to get the snapshot from all resource groups
+        # List all snapshots across all resource groups
         async for snapshot in compute_client.snapshots.list():
             if snapshot.name == snapshot_name:
                 progress.update(task, advance=100)
