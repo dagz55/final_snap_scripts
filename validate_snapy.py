@@ -1,217 +1,83 @@
-import json
-import time
-import sys
+import os
 import asyncio
-from rich import box
-from rich.console import Group
-from rich.live import Live
-from rich.panel import Panel
-from rich.progress import BarColumn, Progress, TextColumn, TimeRemainingColumn
-from rich.prompt import Confirm
+import sys
+import time
+from azure.identity.aio import DefaultAzureCredential
+from azure.mgmt.compute.aio import ComputeManagementClient
+from azure.core.exceptions import ResourceNotFoundError
+from rich.console import Console
 from rich.table import Table
+from rich.panel import Panel
+from rich.progress import Progress, SpinnerColumn, TextColumn, BarColumn, TaskProgressColumn
+from rich.prompt import Confirm
 
-# Import shared components from common.py
-from common import (
-    console, USER_ID, LOG_DIR, LOG_FILE, SUMMARY_FILE, SNAP_RID_LIST_FILE,
-    INVENTORY_FILE, error_log_file, run_az_command, log_error, extract_snapshot_name,
-    write_log
-)
+console = Console()
+
+# ... (keep the existing imports and constants)
 
 async def validate_snapshots(snapshot_list_file):
-    console.print(
-        Panel.fit(
-            "[bold cyan]Starting snapshot validation...[/bold cyan]",
-            border_style="cyan",
-        )
-    )
+    start_time = time.time()
+    
+    # ... (keep the existing setup code)
 
-    with open(snapshot_list_file, "r") as file:
-        snapshot_ids = [line.strip() for line in file if line.strip()]
-
-    total_snapshots = len(snapshot_ids)
-    if total_snapshots == 0:
-        console.print("[bold red]Error: No valid snapshot IDs found in the file.[/bold red]")
-        return
-
-    validated_snapshots = []
-
-    overall_progress = Progress(
+    with Progress(
+        SpinnerColumn(),
         TextColumn("[progress.description]{task.description}"),
-        BarColumn(bar_width=None),
-        TextColumn("[progress.percentage]{task.percentage:>3.0f}%"),
-        TextColumn("{task.completed}/{task.total}"),
-        TimeRemainingColumn(),
-        expand=True,
-    )
+        BarColumn(),
+        TaskProgressColumn(),
+        console=console,
+    ) as progress:
+        overall_task = progress.add_task("[cyan]Processing snapshots...", total=total_snapshots)
+        snapshot_tasks = []
 
-    snapshot_progress = Progress(
-        TextColumn("[progress.description]{task.description}"),
-        BarColumn(bar_width=None),
-        TextColumn("{task.completed:.0f}/{task.total:.0f}"),
-        TimeRemainingColumn(),
-        expand=True,
-    )
+        async for snapshot_name in read_snapshots(snapshot_list_file):
+            snapshot_task = progress.add_task(f"Validating: {snapshot_name}", total=100)
+            snapshot_tasks.append(validate_snapshot(snapshot_name, progress, snapshot_task))
 
-    overall_task = overall_progress.add_task(
-        "[green]Overall progress", total=total_snapshots
-    )
-    current_task = snapshot_progress.add_task(
-        "Validating snapshot", total=1, visible=True
-    )
-
-    progress_group = Group(
-        Panel(overall_progress, title="Overall Progress", border_style="green"),
-        Panel(snapshot_progress, title="Current Snapshot", border_style="blue"),
-    )
-
-    snapshot_start_time = time.time()
-
-    with Live(progress_group, refresh_per_second=10) as live:
-        for snapshot_id in snapshot_ids:
-            snapshot_name = extract_snapshot_name(snapshot_id)
-            snapshot_info = {"id": snapshot_id, "exists": False, "name": snapshot_name}
-
-            snapshot_progress.update(
-                current_task,
-                description=f"Validating: {snapshot_name:<50}",
-                completed=0,
-            )
-
-            if snapshot_id.strip():
-                stdout, stderr, returncode = await run_az_command(
-                    f"az snapshot show --ids {snapshot_id} --query '{{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}}' -o json"
-                )
-                if returncode == 0:
-                    try:
-                        details = json.loads(stdout)
-                        snapshot_info.update(
-                            {
-                                "exists": True,
-                                "resource_group": details["resourceGroup"],
-                                "time_created": details["timeCreated"],
-                                "size_gb": details["diskSizeGb"],
-                                "state": details["provisioningState"],
-                            }
-                        )
-                    except json.JSONDecodeError:
-                        await write_log(f"Failed to parse JSON for snapshot: {snapshot_id}")
-                        log_error(f"Failed to parse JSON for snapshot: {snapshot_id}")
-                else:
-                    snapshot_info["name"] = f"Not found: {snapshot_name}"
-                    await write_log(f"Snapshot not found: {snapshot_id}")
-            else:
-                snapshot_info["name"] = f"Invalid: {snapshot_name}"
-                await write_log(f"Invalid snapshot ID: {snapshot_id}")
-
-            validated_snapshots.append(snapshot_info)
-            overall_progress.update(overall_task, advance=1)
-
-            snapshot_end_time = time.time()
-            validation_time = snapshot_end_time - snapshot_start_time
-            snapshot_progress.update(
-                current_task,
-                description=f"Validated: {snapshot_name:<50} in {validation_time:.2f}s",
-                completed=1,
-            )
-
-            time.sleep(0.5)
+        validated_snapshots = await asyncio.gather(*snapshot_tasks)
+        progress.update(overall_task, completed=total_snapshots)
 
     end_time = time.time()
-    runtime = end_time - snapshot_start_time
+    runtime = end_time - start_time
 
-    console.print("\n")  # Add a newline for separation
-
-    valid_table = Table(title="Valid Snapshots", box=box.ROUNDED)
-    valid_table.add_column("Snapshot Name", style="cyan")
-    valid_table.add_column("Status", style="green", justify="center")
-
-    invalid_table = Table(title="Invalid Snapshots", box=box.ROUNDED)
-    invalid_table.add_column("Snapshot Name", style="cyan")
-    invalid_table.add_column("Status", style="red", justify="center")
-
-    for snapshot in validated_snapshots:
-        if snapshot["exists"]:
-            valid_table.add_row(snapshot["name"], "✓")
-        else:
-            invalid_table.add_row(snapshot["name"], "✗")
-
-    console.print(
-        Panel(Group(valid_table, invalid_table), expand=False, border_style="green")
-    )
-
-    # Create summary table
-    summary_table = Table(title="Snapshot Validation Summary", box=box.ROUNDED)
+    # Display summary table
+    console.print("\n")
+    summary_table = Table(title="Snapshot Validation Summary", box="rounded")
     summary_table.add_column("Category", style="cyan")
     summary_table.add_column("Count", style="magenta")
-
     summary_table.add_row("Total snapshots processed", str(total_snapshots))
-    summary_table.add_row(
-        "Valid snapshots", str(sum(1 for s in validated_snapshots if s["exists"]))
-    )
-    summary_table.add_row(
-        "Invalid snapshots", str(sum(1 for s in validated_snapshots if not s["exists"]))
-    )
-
+    summary_table.add_row("Valid snapshots", str(sum(1 for s in validated_snapshots if s["exists"])))
+    summary_table.add_row("Invalid snapshots", str(sum(1 for s in validated_snapshots if not s["exists"])))
+    summary_table.add_row("Runtime", f"{runtime:.2f} seconds")
+    
     console.print(Panel(summary_table, expand=False, border_style="green"))
 
-    console.print(
-        Panel(
-            f"[bold green]Validation complete![/bold green]\nRuntime: {runtime:.2f} seconds",
-            border_style="green",
-        )
-    )
+    # ... (keep the existing code for saving results to a log file)
 
-    if Confirm.ask("Do you want to save the validation results to a log file?"):
-        from datetime import datetime
-        import os
-        timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
-        log_file = os.path.join(
-            LOG_DIR, f"snapshot_validation_log_{USER_ID}_{timestamp}.txt"
-        )
-        with open(log_file, "w") as f:
-            f.write("Snapshot Validation Results\n")
-            f.write("===========================\n\n")
-            for snapshot in validated_snapshots:
-                f.write(f"Snapshot Name: {snapshot['name']}\n")
-                f.write(f"Exists: {'Yes' if snapshot['exists'] else 'No'}\n")
-                if snapshot["exists"]:
-                    f.write(
-                        f"Resource Group: {snapshot.get('resource_group', 'N/A')}\n"
-                    )
-                    f.write(f"Time Created: {snapshot.get('time_created', 'N/A')}\n")
-                    f.write(f"Size (GB): {snapshot.get('size_gb', 'N/A')}\n")
-                    f.write(f"State: {snapshot.get('state', 'N/A')}\n")
-                f.write("\n")
-            f.write(f"\nTotal snapshots processed: {total_snapshots}\n")
-            f.write(
-                f"Valid snapshots: {sum(1 for s in validated_snapshots if s['exists'])}\n"
-            )
-            f.write(
-                f"Invalid snapshots: {sum(1 for s in validated_snapshots if not s['exists'])}\n"
-            )
-            f.write(f"Runtime: {runtime:.2f} seconds\n")
-        console.print(
-            Panel(
-                f"[bold green]Log file saved:[/bold green] {log_file}",
-                border_style="green",
-            )
-        )
+async def validate_snapshot(snapshot_name, progress, task):
+    try:
+        snapshot = await compute_client.snapshots.get(resource_group_name, snapshot_name)
+        progress.update(task, advance=50)
+        
+        # Perform additional checks if needed
+        # ...
 
-    console.print(
-        Panel(
-            f"[yellow]Note: Errors and details have been logged to: {error_log_file}[/yellow]",
-            border_style="yellow",
-        )
-    )
+        progress.update(task, advance=50)
+        return {
+            "name": snapshot_name,
+            "exists": True,
+            "resource_group": resource_group_name,
+            "time_created": str(snapshot.time_created),
+            "size_gb": snapshot.disk_size_gb,
+            "state": snapshot.provisioning_state,
+        }
+    except ResourceNotFoundError:
+        progress.update(task, advance=100)
+        return {"name": snapshot_name, "exists": False}
+    except Exception as e:
+        progress.update(task, advance=100)
+        error_message = f"Error validating snapshot {snapshot_name}: {str(e)}"
+        errors.append(error_message)
+        return {"name": snapshot_name, "exists": False, "error": error_message}
 
-async def main(snapshot_list_file=None):
-    if snapshot_list_file is None:
-        snapshot_list_file = (
-            console.input("Enter the path to the snapshot list file (default: snap_rid_list.txt): ")
-            or "snap_rid_list.txt"
-        )
-    await validate_snapshots(snapshot_list_file)
-
-if __name__ == "__main__":
-    snapshot_list_file = sys.argv[1] if len(sys.argv) > 1 else None
-    asyncio.run(main(snapshot_list_file))
+# ... (keep the rest of the script unchanged)
