@@ -74,8 +74,7 @@ async def validate_snapshots(snapshot_list_file):
     )
 
     credential = DefaultAzureCredential()
-    async with ComputeManagementClient(credential, SUBSCRIPTION_ID) as compute_client:
-        start_time = time.time()
+    start_time = time.time()
     
     snapshot_names = []
     with open(snapshot_list_file, "r") as file:
@@ -86,22 +85,23 @@ async def validate_snapshots(snapshot_list_file):
     validated_snapshots = []
     errors = []
 
-    with Progress(
-        SpinnerColumn(),
-        TextColumn("[progress.description]{task.description}"),
-        BarColumn(),
-        TaskProgressColumn(),
-        console=console,
-    ) as progress:
-        overall_task = progress.add_task("[cyan]Processing snapshots...", total=total_snapshots)
-        snapshot_tasks = []
+    async with ComputeManagementClient(credential, SUBSCRIPTION_ID) as compute_client:
+        with Progress(
+            SpinnerColumn(),
+            TextColumn("[progress.description]{task.description}"),
+            BarColumn(),
+            TaskProgressColumn(),
+            console=console,
+        ) as progress:
+            overall_task = progress.add_task("[cyan]Processing snapshots...", total=total_snapshots)
+            snapshot_tasks = []
 
-        for snapshot_name in snapshot_names:
-            snapshot_task = progress.add_task(f"Validating: {snapshot_name}", total=100)
-            snapshot_tasks.append(validate_snapshot(snapshot_name, compute_client, progress, snapshot_task))
+            for snapshot_name in snapshot_names:
+                snapshot_task = progress.add_task(f"Validating: {snapshot_name}", total=100)
+                snapshot_tasks.append(validate_snapshot(snapshot_name, compute_client, progress, snapshot_task))
 
-        validated_snapshots = await asyncio.gather(*snapshot_tasks)
-        progress.update(overall_task, completed=total_snapshots)
+            validated_snapshots = await asyncio.gather(*snapshot_tasks)
+            progress.update(overall_task, completed=total_snapshots)
 
     end_time = time.time()
     runtime = end_time - start_time
@@ -156,7 +156,7 @@ async def validate_snapshots(snapshot_list_file):
 async def validate_snapshot(snapshot_name, compute_client, progress, task):
     try:
         # List all snapshots across all resource groups
-        async for snapshot in compute_client.snapshots.list():
+        async for snapshot in compute_client.snapshots.list_all():
             if snapshot.name == snapshot_name:
                 progress.update(task, advance=100)
                 return {
@@ -175,6 +175,7 @@ async def validate_snapshot(snapshot_name, compute_client, progress, task):
         progress.update(task, advance=100)
         error_message = f"Error validating snapshot {snapshot_name}: {str(e)}"
         log_error(error_message)
+        console.print(f"[bold red]Error:[/bold red] {error_message}")
         return {"name": snapshot_name, "exists": False, "error": error_message}
 
 if __name__ == "__main__":
