@@ -18,6 +18,27 @@ SNAP_RID_LIST_FILE = "snap_rid_list.txt"
 INVENTORY_FILE = 'linux_vm-inventory.csv'
 error_log_file = os.path.join(LOG_DIR, f"error_log_{USER_ID}_{TIMESTAMP}.txt")
 
+# Azure-specific constants
+SUBSCRIPTION_ID = os.environ.get('AZURE_SUBSCRIPTION_ID')
+RESOURCE_GROUP_NAME = os.environ.get('AZURE_RESOURCE_GROUP')
+
+def get_azure_credentials():
+    global SUBSCRIPTION_ID, RESOURCE_GROUP_NAME
+    
+    if not SUBSCRIPTION_ID:
+        SUBSCRIPTION_ID = console.input("[yellow]AZURE_SUBSCRIPTION_ID not set. Please enter your Azure Subscription ID: [/yellow]")
+        os.environ['AZURE_SUBSCRIPTION_ID'] = SUBSCRIPTION_ID
+
+    if not RESOURCE_GROUP_NAME:
+        RESOURCE_GROUP_NAME = console.input("[yellow]AZURE_RESOURCE_GROUP not set. Please enter your Azure Resource Group name: [/yellow]")
+        os.environ['AZURE_RESOURCE_GROUP'] = RESOURCE_GROUP_NAME
+
+    if not SUBSCRIPTION_ID or not RESOURCE_GROUP_NAME:
+        console.print("[bold red]Error: AZURE_SUBSCRIPTION_ID and AZURE_RESOURCE_GROUP must be provided.[/bold red]")
+        sys.exit(1)
+
+    return SUBSCRIPTION_ID, RESOURCE_GROUP_NAME
+
 # Common functions
 async def run_az_command(command):
     try:
