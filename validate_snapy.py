@@ -78,8 +78,11 @@ async def validate_snapshots(snapshot_list_file):
 
     start_time = time.time()
     
+    snapshot_names = []
     with open(snapshot_list_file, "r") as file:
-        total_snapshots = sum(1 for _ in file)
+        for line in file:
+            snapshot_names.append(extract_snapshot_name(line.strip()))
+    total_snapshots = len(snapshot_names)
 
     validated_snapshots = []
     errors = []
@@ -94,7 +97,7 @@ async def validate_snapshots(snapshot_list_file):
         overall_task = progress.add_task("[cyan]Processing snapshots...", total=total_snapshots)
         snapshot_tasks = []
 
-        async for snapshot_name in read_snapshots(snapshot_list_file):
+        for snapshot_name in snapshot_names:
             snapshot_task = progress.add_task(f"Validating: {snapshot_name}", total=100)
             snapshot_tasks.append(validate_snapshot(snapshot_name, compute_client, progress, snapshot_task))
 
@@ -153,22 +156,20 @@ async def validate_snapshots(snapshot_list_file):
 
 async def validate_snapshot(snapshot_name, compute_client, progress, task):
     try:
-        snapshot = await compute_client.snapshots.get(RESOURCE_GROUP_NAME, snapshot_name)
-        progress.update(task, advance=50)
+        # Try to get the snapshot from all resource groups
+        async for snapshot in compute_client.snapshots.list():
+            if snapshot.name == snapshot_name:
+                progress.update(task, advance=100)
+                return {
+                    "name": snapshot_name,
+                    "exists": True,
+                    "resource_group": snapshot.id.split('/')[4],  # Extract resource group from the ID
+                    "time_created": str(snapshot.time_created),
+                    "size_gb": snapshot.disk_size_gb,
+                    "state": snapshot.provisioning_state,
+                }
         
-        # Perform additional checks if needed
-        # ...
-
-        progress.update(task, advance=50)
-        return {
-            "name": snapshot_name,
-            "exists": True,
-            "resource_group": RESOURCE_GROUP_NAME,
-            "time_created": str(snapshot.time_created),
-            "size_gb": snapshot.disk_size_gb,
-            "state": snapshot.provisioning_state,
-        }
-    except ResourceNotFoundError:
+        # If the loop completes without finding the snapshot, it doesn't exist
         progress.update(task, advance=100)
         return {"name": snapshot_name, "exists": False}
     except Exception as e:
