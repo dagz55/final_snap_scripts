@@ -192,8 +192,11 @@ async def validate_snapshot(snapshot_id, progress, task):
         return {"name": extract_snapshot_name(snapshot_id), "exists": False, "error": error_message}
 
 def move_invalid_snapshots(validated_snapshots, snapshot_list_file):
-    invalid_snapshots = [s["id"] for s in validated_snapshots if not s["exists"]]
-    valid_snapshots = [s["id"] for s in validated_snapshots if s["exists"]]
+    with open(snapshot_list_file, "r") as f:
+        all_snapshots = f.read().splitlines()
+
+    invalid_snapshots = [s for s in all_snapshots if not any(v["name"] == extract_snapshot_name(s) and v["exists"] for v in validated_snapshots)]
+    valid_snapshots = [s for s in all_snapshots if any(v["name"] == extract_snapshot_name(s) and v["exists"] for v in validated_snapshots)]
 
     # Write invalid snapshots to new file
     invalid_file = "invalid_snap_rid.txt"
