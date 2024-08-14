@@ -3,6 +3,7 @@ import datetime
 import getpass
 import json
 import os
+import sys
 import time
 from azure.identity.aio import DefaultAzureCredential
 from azure.mgmt.compute.aio import ComputeManagementClient
@@ -14,6 +15,14 @@ from rich.progress import Progress, SpinnerColumn, TextColumn, BarColumn, TaskPr
 from rich.prompt import Confirm
 
 console = Console()
+
+# Add these constants
+SUBSCRIPTION_ID = os.environ.get('AZURE_SUBSCRIPTION_ID')
+RESOURCE_GROUP_NAME = os.environ.get('AZURE_RESOURCE_GROUP')
+
+if not SUBSCRIPTION_ID or not RESOURCE_GROUP_NAME:
+    console.print("[bold red]Error: AZURE_SUBSCRIPTION_ID and AZURE_RESOURCE_GROUP environment variables must be set.[/bold red]")
+    sys.exit(1)
 
 user_uid = getpass.getuser()
 
@@ -49,7 +58,7 @@ async def validate_snapshots(snapshot_list_file):
     )
 
     credential = DefaultAzureCredential()
-    compute_client = ComputeManagementClient(credential, subscription_id)
+    compute_client = ComputeManagementClient(credential, SUBSCRIPTION_ID)
 
     start_time = time.time()
     
@@ -128,7 +137,7 @@ async def validate_snapshots(snapshot_list_file):
 
 async def validate_snapshot(snapshot_name, compute_client, progress, task):
     try:
-        snapshot = await compute_client.snapshots.get(resource_group_name, snapshot_name)
+        snapshot = await compute_client.snapshots.get(RESOURCE_GROUP_NAME, snapshot_name)
         progress.update(task, advance=50)
         
         # Perform additional checks if needed
@@ -138,7 +147,7 @@ async def validate_snapshot(snapshot_name, compute_client, progress, task):
         return {
             "name": snapshot_name,
             "exists": True,
-            "resource_group": resource_group_name,
+            "resource_group": RESOURCE_GROUP_NAME,
             "time_created": str(snapshot.time_created),
             "size_gb": snapshot.disk_size_gb,
             "state": snapshot.provisioning_state,
