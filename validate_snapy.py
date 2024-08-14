@@ -17,17 +17,27 @@ from rich.prompt import Confirm
 console = Console()
 
 # Extract SUBSCRIPTION_ID and RESOURCE_GROUP_NAME from snap_rid_list.txt
+SUBSCRIPTION_ID = None
+RESOURCE_GROUP_NAME = None
+
 with open('snap_rid_list.txt', 'r') as f:
-    first_line = f.readline().strip()
-    parts = first_line.split('/')
-    SUBSCRIPTION_ID = parts[2]
-    RESOURCE_GROUP_NAME = parts[4]
+    for line in f:
+        line = line.strip()
+        if line:
+            parts = line.split('/')
+            if len(parts) >= 5:
+                SUBSCRIPTION_ID = parts[2]
+                RESOURCE_GROUP_NAME = parts[4]
+                break
 
-console.print(f"[green]Using Subscription ID: {SUBSCRIPTION_ID}[/green]")
-console.print(f"[green]Using Resource Group: {RESOURCE_GROUP_NAME}[/green]")
-
-os.environ['AZURE_SUBSCRIPTION_ID'] = SUBSCRIPTION_ID
-os.environ['AZURE_RESOURCE_GROUP'] = RESOURCE_GROUP_NAME
+if SUBSCRIPTION_ID and RESOURCE_GROUP_NAME:
+    console.print(f"[green]Using Subscription ID: {SUBSCRIPTION_ID}[/green]")
+    console.print(f"[green]Using Resource Group: {RESOURCE_GROUP_NAME}[/green]")
+    os.environ['AZURE_SUBSCRIPTION_ID'] = SUBSCRIPTION_ID
+    os.environ['AZURE_RESOURCE_GROUP'] = RESOURCE_GROUP_NAME
+else:
+    console.print("[bold red]Error: Could not extract Subscription ID and Resource Group from snap_rid_list.txt[/bold red]")
+    sys.exit(1)
 
 user_uid = getpass.getuser()
 
