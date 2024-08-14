@@ -1,0 +1,31 @@
+2024-08-13 14:14:32.376652: CHG Number: CHG1234567
+2024-08-13 14:14:33.409778: Switched to subscription: 48fd4545-8d1b-4da2-b81c-b9e5a6552a61
+2024-08-13 14:14:35.350809: Failed to get VM details for dgm011581
+2024-08-13 14:14:35.351325: Error: ERROR: AADSTS50173: The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '2024-08-12T14:17:05.3026056Z' and the TokensValidFrom date (before which tokens are not valid) for this user is '2024-08-13T02:18:42.0000000Z'. Trace ID: 8e1f5963-5413-4d32-96a3-8596d25f6300 Correlation ID: 8c6396d2-4b6e-4119-a9f7-55496d5c5fd6 Timestamp: 2024-08-13 06:14:34Z
+Interactive authentication is needed. Please run:
+az login --scope https://management.core.windows.net//.default
+2024-08-13 14:14:35.954586: Failed to get VM details for dgm011582
+2024-08-13 14:14:35.955115: Error: ERROR: AADSTS50173: The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '2024-08-12T14:17:05.3026056Z' and the TokensValidFrom date (before which tokens are not valid) for this user is '2024-08-13T02:18:42.0000000Z'. Trace ID: 8e1f5963-5413-4d32-96a3-8596d25f6300 Correlation ID: 8c6396d2-4b6e-4119-a9f7-55496d5c5fd6 Timestamp: 2024-08-13 06:14:34Z
+Interactive authentication is needed. Please run:
+az login --scope https://management.core.windows.net//.default
+2024-08-13 14:14:36.598583: Failed to get VM details for dgm011583
+2024-08-13 14:14:36.599059: Error: ERROR: AADSTS50173: The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '2024-08-12T14:17:05.3026056Z' and the TokensValidFrom date (before which tokens are not valid) for this user is '2024-08-13T02:18:42.0000000Z'. Trace ID: 8e1f5963-5413-4d32-96a3-8596d25f6300 Correlation ID: 8c6396d2-4b6e-4119-a9f7-55496d5c5fd6 Timestamp: 2024-08-13 06:14:34Z
+Interactive authentication is needed. Please run:
+az login --scope https://management.core.windows.net//.default
+2024-08-13 14:14:37.392482: Failed to get VM details for dgm011584
+2024-08-13 14:14:37.393091: Error: ERROR: AADSTS50173: The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '2024-08-12T14:17:05.3026056Z' and the TokensValidFrom date (before which tokens are not valid) for this user is '2024-08-13T02:18:42.0000000Z'. Trace ID: 8e1f5963-5413-4d32-96a3-8596d25f6300 Correlation ID: 8c6396d2-4b6e-4119-a9f7-55496d5c5fd6 Timestamp: 2024-08-13 06:14:34Z
+Interactive authentication is needed. Please run:
+az login --scope https://management.core.windows.net//.default
+2024-08-13 14:14:38.054205: Failed to get VM details for esns-dns-dev-admin-vm-dgm0114cf
+2024-08-13 14:14:38.054703: Error: ERROR: AADSTS50173: The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '2024-08-12T14:17:05.3026056Z' and the TokensValidFrom date (before which tokens are not valid) for this user is '2024-08-13T02:18:42.0000000Z'. Trace ID: 8e1f5963-5413-4d32-96a3-8596d25f6300 Correlation ID: 8c6396d2-4b6e-4119-a9f7-55496d5c5fd6 Timestamp: 2024-08-13 06:14:34Z
+Interactive authentication is needed. Please run:
+az login --scope https://management.core.windows.net//.default
+2024-08-13 14:14:38.635657: Failed to get VM details for esns-dns-dev-admin-vm-dgm0114d0
+2024-08-13 14:14:38.636137: Error: ERROR: AADSTS50173: The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '2024-08-12T14:17:05.3026056Z' and the TokensValidFrom date (before which tokens are not valid) for this user is '2024-08-13T02:18:42.0000000Z'. Trace ID: 8e1f5963-5413-4d32-96a3-8596d25f6300 Correlation ID: 8c6396d2-4b6e-4119-a9f7-55496d5c5fd6 Timestamp: 2024-08-13 06:14:34Z
+Interactive authentication is needed. Please run:
+az login --scope https://management.core.windows.net//.default
+2024-08-13 14:14:38.969713: Switched to subscription: eec3e2f3-252e-4401-b09b-d06c5c499c3a
+2024-08-13 14:14:39.587342: Failed to get VM details for dgm011570
+2024-08-13 14:14:39.587782: Error: ERROR: AADSTS50173: The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '2024-08-12T14:17:05.3026056Z' and the TokensValidFrom date (before which tokens are not valid) for this user is '2024-08-13T02:18:42.0000000Z'. Trace ID: 8e1f5963-5413-4d32-96a3-8596d25f6300 Correlation ID: 8c6396d2-4b6e-4119-a9f7-55496d5c5fd6 Timestamp: 2024-08-13 06:14:34Z
+Interactive authentication is needed. Please run:
+az login --scope https://management.core.windows.net//.default

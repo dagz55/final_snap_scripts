@@ -1,0 +1,2 @@
+2024-08-12 22:20:31.789475: CHG Number: CHG1234567
+2024-08-12 22:20:32.137765: Switched to subscription: 48fd4545-8d1b-4da2-b81c-b9e5a6552a61

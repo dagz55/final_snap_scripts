@@ -1,0 +1,61 @@
+2024-08-12 18:46:33.976303: CHG Number: chg1234567
+2024-08-12 18:46:34.056686: Command failed (attempt 1): az account set --subscription 48fd4545-8d1b-4da2-b81c-b9e5a6552a61
+2024-08-12 18:46:34.056977: Error: Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/robertsuarez/final_snap_promax/.venv/lib/python3.11/site-packages/azure/cli/__main__.py", line 14, in <module>
+    from azure.cli.core import telemetry
+ModuleNotFoundError: No module named 'azure.cli.core'
+2024-08-12 18:46:34.057237: Retrying in 5 seconds...
+2024-08-12 18:46:39.101577: Command failed (attempt 2): az account set --subscription 48fd4545-8d1b-4da2-b81c-b9e5a6552a61
+2024-08-12 18:46:39.101952: Error: Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/robertsuarez/final_snap_promax/.venv/lib/python3.11/site-packages/azure/cli/__main__.py", line 14, in <module>
+    from azure.cli.core import telemetry
+ModuleNotFoundError: No module named 'azure.cli.core'
+2024-08-12 18:46:39.102137: Retrying in 5 seconds...
+2024-08-12 18:46:44.150744: Command failed (attempt 3): az account set --subscription 48fd4545-8d1b-4da2-b81c-b9e5a6552a61
+2024-08-12 18:46:44.151125: Error: Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/robertsuarez/final_snap_promax/.venv/lib/python3.11/site-packages/azure/cli/__main__.py", line 14, in <module>
+    from azure.cli.core import telemetry
+ModuleNotFoundError: No module named 'azure.cli.core'
+2024-08-12 18:46:44.151387: Failed to set subscription ID: 48fd4545-8d1b-4da2-b81c-b9e5a6552a61
+2024-08-12 18:46:44.151632: Error: Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/robertsuarez/final_snap_promax/.venv/lib/python3.11/site-packages/azure/cli/__main__.py", line 14, in <module>
+    from azure.cli.core import telemetry
+ModuleNotFoundError: No module named 'azure.cli.core'
+2024-08-12 18:46:44.194070: Command failed (attempt 1): az account set --subscription eec3e2f3-252e-4401-b09b-d06c5c499c3a
+2024-08-12 18:46:44.194993: Error: Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/robertsuarez/final_snap_promax/.venv/lib/python3.11/site-packages/azure/cli/__main__.py", line 14, in <module>
+    from azure.cli.core import telemetry
+ModuleNotFoundError: No module named 'azure.cli.core'
+2024-08-12 18:46:44.195577: Retrying in 5 seconds...
+2024-08-12 18:46:49.253817: Command failed (attempt 2): az account set --subscription eec3e2f3-252e-4401-b09b-d06c5c499c3a
+2024-08-12 18:46:49.254236: Error: Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/robertsuarez/final_snap_promax/.venv/lib/python3.11/site-packages/azure/cli/__main__.py", line 14, in <module>
+    from azure.cli.core import telemetry
+ModuleNotFoundError: No module named 'azure.cli.core'
+2024-08-12 18:46:49.254430: Retrying in 5 seconds...
+2024-08-12 18:46:54.304836: Command failed (attempt 3): az account set --subscription eec3e2f3-252e-4401-b09b-d06c5c499c3a
+2024-08-12 18:46:54.305233: Error: Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/robertsuarez/final_snap_promax/.venv/lib/python3.11/site-packages/azure/cli/__main__.py", line 14, in <module>
+    from azure.cli.core import telemetry
+ModuleNotFoundError: No module named 'azure.cli.core'
+2024-08-12 18:46:54.305455: Failed to set subscription ID: eec3e2f3-252e-4401-b09b-d06c5c499c3a
+2024-08-12 18:46:54.305672: Error: Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/robertsuarez/final_snap_promax/.venv/lib/python3.11/site-packages/azure/cli/__main__.py", line 14, in <module>
+    from azure.cli.core import telemetry
+ModuleNotFoundError: No module named 'azure.cli.core'

@@ -1,0 +1,17 @@
+Snapshot Creation Summary
+=========================
+
+Total VMs processed: 7
+Successful snapshots: 0
+Failed snapshots: 7
+
+Successful snapshots:
+
+Failed snapshots:
+- dgm011581: Failed to set subscription
+- dgm011582: Failed to set subscription
+- dgm011583: Failed to set subscription
+- dgm011584: Failed to set subscription
+- esns-dns-dev-admin-vm-dgm0114cf: Failed to set subscription
+- esns-dns-dev-admin-vm-dgm0114d0: Failed to set subscription
+- dgm011570: Failed to set subscription

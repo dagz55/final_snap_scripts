@@ -1,0 +1,2 @@
+2024-08-14 13:14:40.160642: CHG Number: CHG0641781
+2024-08-14 13:14:40.161437: Error: No VM information found in 'snapshot_vmlist.txt'.

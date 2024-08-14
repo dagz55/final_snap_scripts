@@ -1,0 +1,165 @@
+2024-08-11 13:10:07.502633: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011584_20240809134330 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: (ResourceNotFound) The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011584_20240809134330' under resource group 'AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+Code: ResourceNotFound
+Message: The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011584_20240809134330' under resource group 'AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+
+2024-08-11 13:10:08.981537: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011583_20240809134330 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: (ResourceNotFound) The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011583_20240809134330' under resource group 'AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+Code: ResourceNotFound
+Message: The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011583_20240809134330' under resource group 'AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+
+2024-08-11 13:10:10.580472: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011582_20240809134330 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: (ResourceNotFound) The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011582_20240809134330' under resource group 'AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+Code: ResourceNotFound
+Message: The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011582_20240809134330' under resource group 'AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+
+2024-08-11 13:10:12.070855: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011581_20240809134330 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: (ResourceNotFound) The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011581_20240809134330' under resource group 'AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+Code: ResourceNotFound
+Message: The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011581_20240809134330' under resource group 'AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+
+2024-08-11 13:10:13.596504: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114d0_20240809134330 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: (ResourceNotFound) The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114d0_20240809134330' under resource group 'AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+Code: ResourceNotFound
+Message: The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114d0_20240809134330' under resource group 'AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+
+2024-08-11 13:10:15.173373: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114cf_20240809134330 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: (ResourceNotFound) The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114cf_20240809134330' under resource group 'AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+Code: ResourceNotFound
+Message: The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114cf_20240809134330' under resource group 'AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+
+2024-08-11 13:10:16.643775: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011582_20240809134846 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: (ResourceNotFound) The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011582_20240809134846' under resource group 'AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+Code: ResourceNotFound
+Message: The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011582_20240809134846' under resource group 'AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+
+2024-08-11 13:10:18.116015: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011584_20240809134846 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: (ResourceNotFound) The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011584_20240809134846' under resource group 'AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+Code: ResourceNotFound
+Message: The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011584_20240809134846' under resource group 'AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+
+2024-08-11 13:10:19.646775: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011581_20240809134846 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: (ResourceNotFound) The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011581_20240809134846' under resource group 'AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+Code: ResourceNotFound
+Message: The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011581_20240809134846' under resource group 'AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+
+2024-08-11 13:10:21.197570: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011583_20240809134846 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: (ResourceNotFound) The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011583_20240809134846' under resource group 'AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+Code: ResourceNotFound
+Message: The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011583_20240809134846' under resource group 'AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+
+2024-08-11 13:10:22.690891: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114cf_20240809134846 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: (ResourceNotFound) The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114cf_20240809134846' under resource group 'AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+Code: ResourceNotFound
+Message: The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114cf_20240809134846' under resource group 'AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+
+2024-08-11 13:10:24.164599: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114d0_20240809134846 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: (ResourceNotFound) The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114d0_20240809134846' under resource group 'AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+Code: ResourceNotFound
+Message: The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114d0_20240809134846' under resource group 'AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+
+2024-08-11 13:10:25.718779: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011581_20240809140640 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: (ResourceNotFound) The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011581_20240809140640' under resource group 'AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+Code: ResourceNotFound
+Message: The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011581_20240809140640' under resource group 'AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+
+2024-08-11 13:10:27.224214: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011582_20240809140640 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: (ResourceNotFound) The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011582_20240809140640' under resource group 'AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+Code: ResourceNotFound
+Message: The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011582_20240809140640' under resource group 'AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+
+2024-08-11 13:10:28.699356: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011583_20240809140640 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: (ResourceNotFound) The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011583_20240809140640' under resource group 'AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+Code: ResourceNotFound
+Message: The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011583_20240809140640' under resource group 'AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+
+2024-08-11 13:10:30.215816: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011584_20240809140640 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: (ResourceNotFound) The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011584_20240809140640' under resource group 'AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+Code: ResourceNotFound
+Message: The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011584_20240809140640' under resource group 'AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+
+2024-08-11 13:10:31.676405: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114cf_20240809140640 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: (ResourceNotFound) The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114cf_20240809140640' under resource group 'AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+Code: ResourceNotFound
+Message: The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114cf_20240809140640' under resource group 'AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+
+2024-08-11 13:10:33.194840: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114d0_20240809140640 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: (ResourceNotFound) The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114d0_20240809140640' under resource group 'AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+Code: ResourceNotFound
+Message: The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114d0_20240809140640' under resource group 'AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+
+2024-08-11 13:10:34.723578: Error running command: az snapshot show --ids /subscriptions/eec3e2f3-252e-4401-b09b-d06c5c499c3a/resourceGroups/AZ-ENTAPP-NONPROD-01-EMCL-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011570_20240809140640 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: (ResourceNotFound) The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011570_20240809140640' under resource group 'AZ-ENTAPP-NONPROD-01-EMCL-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+Code: ResourceNotFound
+Message: The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011570_20240809140640' under resource group 'AZ-ENTAPP-NONPROD-01-EMCL-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+
+2024-08-11 13:10:36.150505: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011581_20240809141243 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: (ResourceNotFound) The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011581_20240809141243' under resource group 'AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+Code: ResourceNotFound
+Message: The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011581_20240809141243' under resource group 'AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+
+2024-08-11 13:10:37.817656: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011582_20240809141243 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: (ResourceNotFound) The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011582_20240809141243' under resource group 'AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+Code: ResourceNotFound
+Message: The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011582_20240809141243' under resource group 'AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+
+2024-08-11 13:10:39.353885: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011583_20240809141243 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: (ResourceNotFound) The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011583_20240809141243' under resource group 'AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+Code: ResourceNotFound
+Message: The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011583_20240809141243' under resource group 'AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+
+2024-08-11 13:10:40.905945: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011584_20240809141243 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: (ResourceNotFound) The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011584_20240809141243' under resource group 'AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+Code: ResourceNotFound
+Message: The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011584_20240809141243' under resource group 'AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+
+2024-08-11 13:10:42.412322: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114cf_20240809141243 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: (ResourceNotFound) The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114cf_20240809141243' under resource group 'AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+Code: ResourceNotFound
+Message: The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114cf_20240809141243' under resource group 'AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+
+2024-08-11 13:10:43.909397: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114d0_20240809141243 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: (ResourceNotFound) The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114d0_20240809141243' under resource group 'AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+Code: ResourceNotFound
+Message: The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114d0_20240809141243' under resource group 'AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+
+2024-08-11 13:10:45.426311: Error running command: az snapshot show --ids /subscriptions/eec3e2f3-252e-4401-b09b-d06c5c499c3a/resourceGroups/AZ-ENTAPP-NONPROD-01-EMCL-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011570_20240809141243 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: (ResourceNotFound) The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011570_20240809141243' under resource group 'AZ-ENTAPP-NONPROD-01-EMCL-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+Code: ResourceNotFound
+Message: The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011570_20240809141243' under resource group 'AZ-ENTAPP-NONPROD-01-EMCL-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+
+2024-08-11 13:10:47.028261: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011581_20240811000738 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: (ResourceNotFound) The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011581_20240811000738' under resource group 'AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+Code: ResourceNotFound
+Message: The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011581_20240811000738' under resource group 'AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+
+2024-08-11 13:10:48.559021: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011582_20240811000738 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: (ResourceNotFound) The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011582_20240811000738' under resource group 'AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+Code: ResourceNotFound
+Message: The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011582_20240811000738' under resource group 'AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+
+2024-08-11 13:10:50.081424: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011583_20240811000738 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: (ResourceNotFound) The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011583_20240811000738' under resource group 'AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+Code: ResourceNotFound
+Message: The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011583_20240811000738' under resource group 'AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+
+2024-08-11 13:10:51.569094: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011584_20240811000738 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: (ResourceNotFound) The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011584_20240811000738' under resource group 'AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+Code: ResourceNotFound
+Message: The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011584_20240811000738' under resource group 'AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+
+2024-08-11 13:10:53.060602: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114cf_20240811000738 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: (ResourceNotFound) The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114cf_20240811000738' under resource group 'AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+Code: ResourceNotFound
+Message: The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114cf_20240811000738' under resource group 'AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+
+2024-08-11 13:10:54.554251: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114d0_20240811000738 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: (ResourceNotFound) The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114d0_20240811000738' under resource group 'AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+Code: ResourceNotFound
+Message: The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114d0_20240811000738' under resource group 'AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+
+2024-08-11 13:10:56.092737: Error running command: az snapshot show --ids /subscriptions/eec3e2f3-252e-4401-b09b-d06c5c499c3a/resourceGroups/AZ-ENTAPP-NONPROD-01-EMCL-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011570_20240811000738 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: (ResourceNotFound) The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011570_20240811000738' under resource group 'AZ-ENTAPP-NONPROD-01-EMCL-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+Code: ResourceNotFound
+Message: The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011570_20240811000738' under resource group 'AZ-ENTAPP-NONPROD-01-EMCL-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+

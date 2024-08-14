@@ -1,0 +1,120 @@
+2024-08-11 22:54:23.156917: Error running command: az snapshot show --ids  --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/robertsuarez/final_snap_promax/.venv/lib/python3.11/site-packages/azure/cli/__main__.py", line 14, in <module>
+    from azure.cli.core import telemetry
+ModuleNotFoundError: No module named 'azure.cli.core'
+
+2024-08-11 22:54:23.709574: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011581_20240811171446 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/robertsuarez/final_snap_promax/.venv/lib/python3.11/site-packages/azure/cli/__main__.py", line 14, in <module>
+    from azure.cli.core import telemetry
+ModuleNotFoundError: No module named 'azure.cli.core'
+
+2024-08-11 22:54:24.272324: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011582_20240811171446 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/robertsuarez/final_snap_promax/.venv/lib/python3.11/site-packages/azure/cli/__main__.py", line 14, in <module>
+    from azure.cli.core import telemetry
+ModuleNotFoundError: No module named 'azure.cli.core'
+
+2024-08-11 22:54:24.812365: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011583_20240811171446 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/robertsuarez/final_snap_promax/.venv/lib/python3.11/site-packages/azure/cli/__main__.py", line 14, in <module>
+    from azure.cli.core import telemetry
+ModuleNotFoundError: No module named 'azure.cli.core'
+
+2024-08-11 22:54:25.362026: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114cf_20240811171446 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/robertsuarez/final_snap_promax/.venv/lib/python3.11/site-packages/azure/cli/__main__.py", line 14, in <module>
+    from azure.cli.core import telemetry
+ModuleNotFoundError: No module named 'azure.cli.core'
+
+2024-08-11 22:54:25.912223: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011584_20240811171446 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/robertsuarez/final_snap_promax/.venv/lib/python3.11/site-packages/azure/cli/__main__.py", line 14, in <module>
+    from azure.cli.core import telemetry
+ModuleNotFoundError: No module named 'azure.cli.core'
+
+2024-08-11 22:54:26.472602: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114d0_20240811171446 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/robertsuarez/final_snap_promax/.venv/lib/python3.11/site-packages/azure/cli/__main__.py", line 14, in <module>
+    from azure.cli.core import telemetry
+ModuleNotFoundError: No module named 'azure.cli.core'
+
+2024-08-11 22:54:27.028343: Error running command: az snapshot show --ids /subscriptions/eec3e2f3-252e-4401-b09b-d06c5c499c3a/resourceGroups/AZ-ENTAPP-NONPROD-01-EMCL-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011570_20240811171446 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/robertsuarez/final_snap_promax/.venv/lib/python3.11/site-packages/azure/cli/__main__.py", line 14, in <module>
+    from azure.cli.core import telemetry
+ModuleNotFoundError: No module named 'azure.cli.core'
+
+2024-08-11 22:54:27.586128: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011582_20240811173402 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/robertsuarez/final_snap_promax/.venv/lib/python3.11/site-packages/azure/cli/__main__.py", line 14, in <module>
+    from azure.cli.core import telemetry
+ModuleNotFoundError: No module named 'azure.cli.core'
+
+2024-08-11 22:54:28.139659: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011581_20240811173402 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/robertsuarez/final_snap_promax/.venv/lib/python3.11/site-packages/azure/cli/__main__.py", line 14, in <module>
+    from azure.cli.core import telemetry
+ModuleNotFoundError: No module named 'azure.cli.core'
+
+2024-08-11 22:54:28.687239: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011583_20240811173402 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/robertsuarez/final_snap_promax/.venv/lib/python3.11/site-packages/azure/cli/__main__.py", line 14, in <module>
+    from azure.cli.core import telemetry
+ModuleNotFoundError: No module named 'azure.cli.core'
+
+2024-08-11 22:54:29.233045: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011584_20240811173402 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/robertsuarez/final_snap_promax/.venv/lib/python3.11/site-packages/azure/cli/__main__.py", line 14, in <module>
+    from azure.cli.core import telemetry
+ModuleNotFoundError: No module named 'azure.cli.core'
+
+2024-08-11 22:54:29.770893: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114cf_20240811173402 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/robertsuarez/final_snap_promax/.venv/lib/python3.11/site-packages/azure/cli/__main__.py", line 14, in <module>
+    from azure.cli.core import telemetry
+ModuleNotFoundError: No module named 'azure.cli.core'
+
+2024-08-11 22:54:30.321258: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114d0_20240811173402 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/robertsuarez/final_snap_promax/.venv/lib/python3.11/site-packages/azure/cli/__main__.py", line 14, in <module>
+    from azure.cli.core import telemetry
+ModuleNotFoundError: No module named 'azure.cli.core'
+
+2024-08-11 22:54:30.876639: Error running command: az snapshot show --ids /subscriptions/eec3e2f3-252e-4401-b09b-d06c5c499c3a/resourceGroups/AZ-ENTAPP-NONPROD-01-EMCL-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011570_20240811173402 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/robertsuarez/final_snap_promax/.venv/lib/python3.11/site-packages/azure/cli/__main__.py", line 14, in <module>
+    from azure.cli.core import telemetry
+ModuleNotFoundError: No module named 'azure.cli.core'
+

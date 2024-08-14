@@ -1,0 +1,4 @@
+2024-08-14 11:51:12.626888: CHG Number: CHG0641771
+2024-08-14 11:51:12.983774: Switched to subscription: 48fd4545-8d1b-4da2-b81c-b9e5a6552a61
+2024-08-14 11:51:14.294752: Processing VM: iacspm-raven-dev-database-vm-dgm011a61
+2024-08-14 11:51:29.065077: Snapshot created: RH_CHG0641771_iacspm-raven-dev-database-vm-dgm011a61_20240814115102

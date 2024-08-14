@@ -1,0 +1,200 @@
+2024-08-11 12:37:40.024158: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011584_20240809134330 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: AADSTS50173: The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '2024-08-10T09:54:29.7248177Z' and the TokensValidFrom date (before which tokens are not valid) for this user is '2024-08-10T21:54:28.0000000Z'. Trace ID: 44ed00c1-f21c-4517-aa8d-a84a15115500 Correlation ID: aee9f970-2991-403f-9212-20adc23b6295 Timestamp: 2024-08-11 04:37:39Z
+Interactive authentication is needed. Please run:
+az login --scope https://management.core.windows.net//.default
+
+2024-08-11 12:37:40.324956: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011583_20240809134330 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: AADSTS50173: The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '2024-08-10T09:54:29.7248177Z' and the TokensValidFrom date (before which tokens are not valid) for this user is '2024-08-10T21:54:28.0000000Z'. Trace ID: 44ed00c1-f21c-4517-aa8d-a84a15115500 Correlation ID: aee9f970-2991-403f-9212-20adc23b6295 Timestamp: 2024-08-11 04:37:39Z
+Interactive authentication is needed. Please run:
+az login --scope https://management.core.windows.net//.default
+
+2024-08-11 12:37:40.621260: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011582_20240809134330 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: AADSTS50173: The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '2024-08-10T09:54:29.7248177Z' and the TokensValidFrom date (before which tokens are not valid) for this user is '2024-08-10T21:54:28.0000000Z'. Trace ID: 44ed00c1-f21c-4517-aa8d-a84a15115500 Correlation ID: aee9f970-2991-403f-9212-20adc23b6295 Timestamp: 2024-08-11 04:37:39Z
+Interactive authentication is needed. Please run:
+az login --scope https://management.core.windows.net//.default
+
+2024-08-11 12:37:40.915515: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011581_20240809134330 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: AADSTS50173: The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '2024-08-10T09:54:29.7248177Z' and the TokensValidFrom date (before which tokens are not valid) for this user is '2024-08-10T21:54:28.0000000Z'. Trace ID: 44ed00c1-f21c-4517-aa8d-a84a15115500 Correlation ID: aee9f970-2991-403f-9212-20adc23b6295 Timestamp: 2024-08-11 04:37:39Z
+Interactive authentication is needed. Please run:
+az login --scope https://management.core.windows.net//.default
+
+2024-08-11 12:37:41.215029: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114d0_20240809134330 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: AADSTS50173: The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '2024-08-10T09:54:29.7248177Z' and the TokensValidFrom date (before which tokens are not valid) for this user is '2024-08-10T21:54:28.0000000Z'. Trace ID: 44ed00c1-f21c-4517-aa8d-a84a15115500 Correlation ID: aee9f970-2991-403f-9212-20adc23b6295 Timestamp: 2024-08-11 04:37:39Z
+Interactive authentication is needed. Please run:
+az login --scope https://management.core.windows.net//.default
+
+2024-08-11 12:37:41.508790: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114cf_20240809134330 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: AADSTS50173: The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '2024-08-10T09:54:29.7248177Z' and the TokensValidFrom date (before which tokens are not valid) for this user is '2024-08-10T21:54:28.0000000Z'. Trace ID: 44ed00c1-f21c-4517-aa8d-a84a15115500 Correlation ID: aee9f970-2991-403f-9212-20adc23b6295 Timestamp: 2024-08-11 04:37:39Z
+Interactive authentication is needed. Please run:
+az login --scope https://management.core.windows.net//.default
+
+2024-08-11 12:37:41.804616: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011582_20240809134846 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: AADSTS50173: The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '2024-08-10T09:54:29.7248177Z' and the TokensValidFrom date (before which tokens are not valid) for this user is '2024-08-10T21:54:28.0000000Z'. Trace ID: 44ed00c1-f21c-4517-aa8d-a84a15115500 Correlation ID: aee9f970-2991-403f-9212-20adc23b6295 Timestamp: 2024-08-11 04:37:39Z
+Interactive authentication is needed. Please run:
+az login --scope https://management.core.windows.net//.default
+
+2024-08-11 12:37:42.110803: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011584_20240809134846 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: AADSTS50173: The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '2024-08-10T09:54:29.7248177Z' and the TokensValidFrom date (before which tokens are not valid) for this user is '2024-08-10T21:54:28.0000000Z'. Trace ID: 44ed00c1-f21c-4517-aa8d-a84a15115500 Correlation ID: aee9f970-2991-403f-9212-20adc23b6295 Timestamp: 2024-08-11 04:37:39Z
+Interactive authentication is needed. Please run:
+az login --scope https://management.core.windows.net//.default
+
+2024-08-11 12:37:42.410060: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011581_20240809134846 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: AADSTS50173: The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '2024-08-10T09:54:29.7248177Z' and the TokensValidFrom date (before which tokens are not valid) for this user is '2024-08-10T21:54:28.0000000Z'. Trace ID: 44ed00c1-f21c-4517-aa8d-a84a15115500 Correlation ID: aee9f970-2991-403f-9212-20adc23b6295 Timestamp: 2024-08-11 04:37:39Z
+Interactive authentication is needed. Please run:
+az login --scope https://management.core.windows.net//.default
+
+2024-08-11 12:37:42.710172: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011583_20240809134846 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: AADSTS50173: The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '2024-08-10T09:54:29.7248177Z' and the TokensValidFrom date (before which tokens are not valid) for this user is '2024-08-10T21:54:28.0000000Z'. Trace ID: 44ed00c1-f21c-4517-aa8d-a84a15115500 Correlation ID: aee9f970-2991-403f-9212-20adc23b6295 Timestamp: 2024-08-11 04:37:39Z
+Interactive authentication is needed. Please run:
+az login --scope https://management.core.windows.net//.default
+
+2024-08-11 12:37:43.015807: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114cf_20240809134846 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: AADSTS50173: The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '2024-08-10T09:54:29.7248177Z' and the TokensValidFrom date (before which tokens are not valid) for this user is '2024-08-10T21:54:28.0000000Z'. Trace ID: 44ed00c1-f21c-4517-aa8d-a84a15115500 Correlation ID: aee9f970-2991-403f-9212-20adc23b6295 Timestamp: 2024-08-11 04:37:39Z
+Interactive authentication is needed. Please run:
+az login --scope https://management.core.windows.net//.default
+
+2024-08-11 12:37:43.314927: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114d0_20240809134846 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: AADSTS50173: The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '2024-08-10T09:54:29.7248177Z' and the TokensValidFrom date (before which tokens are not valid) for this user is '2024-08-10T21:54:28.0000000Z'. Trace ID: 44ed00c1-f21c-4517-aa8d-a84a15115500 Correlation ID: aee9f970-2991-403f-9212-20adc23b6295 Timestamp: 2024-08-11 04:37:39Z
+Interactive authentication is needed. Please run:
+az login --scope https://management.core.windows.net//.default
+
+2024-08-11 12:37:43.614971: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011581_20240809140640 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: AADSTS50173: The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '2024-08-10T09:54:29.7248177Z' and the TokensValidFrom date (before which tokens are not valid) for this user is '2024-08-10T21:54:28.0000000Z'. Trace ID: 44ed00c1-f21c-4517-aa8d-a84a15115500 Correlation ID: aee9f970-2991-403f-9212-20adc23b6295 Timestamp: 2024-08-11 04:37:39Z
+Interactive authentication is needed. Please run:
+az login --scope https://management.core.windows.net//.default
+
+2024-08-11 12:37:43.916093: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011582_20240809140640 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: AADSTS50173: The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '2024-08-10T09:54:29.7248177Z' and the TokensValidFrom date (before which tokens are not valid) for this user is '2024-08-10T21:54:28.0000000Z'. Trace ID: 44ed00c1-f21c-4517-aa8d-a84a15115500 Correlation ID: aee9f970-2991-403f-9212-20adc23b6295 Timestamp: 2024-08-11 04:37:39Z
+Interactive authentication is needed. Please run:
+az login --scope https://management.core.windows.net//.default
+
+2024-08-11 12:37:44.224770: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011583_20240809140640 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: AADSTS50173: The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '2024-08-10T09:54:29.7248177Z' and the TokensValidFrom date (before which tokens are not valid) for this user is '2024-08-10T21:54:28.0000000Z'. Trace ID: 44ed00c1-f21c-4517-aa8d-a84a15115500 Correlation ID: aee9f970-2991-403f-9212-20adc23b6295 Timestamp: 2024-08-11 04:37:39Z
+Interactive authentication is needed. Please run:
+az login --scope https://management.core.windows.net//.default
+
+2024-08-11 12:37:44.528516: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011584_20240809140640 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: AADSTS50173: The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '2024-08-10T09:54:29.7248177Z' and the TokensValidFrom date (before which tokens are not valid) for this user is '2024-08-10T21:54:28.0000000Z'. Trace ID: 44ed00c1-f21c-4517-aa8d-a84a15115500 Correlation ID: aee9f970-2991-403f-9212-20adc23b6295 Timestamp: 2024-08-11 04:37:39Z
+Interactive authentication is needed. Please run:
+az login --scope https://management.core.windows.net//.default
+
+2024-08-11 12:37:44.841182: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114cf_20240809140640 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: AADSTS50173: The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '2024-08-10T09:54:29.7248177Z' and the TokensValidFrom date (before which tokens are not valid) for this user is '2024-08-10T21:54:28.0000000Z'. Trace ID: 44ed00c1-f21c-4517-aa8d-a84a15115500 Correlation ID: aee9f970-2991-403f-9212-20adc23b6295 Timestamp: 2024-08-11 04:37:39Z
+Interactive authentication is needed. Please run:
+az login --scope https://management.core.windows.net//.default
+
+2024-08-11 12:37:45.145891: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114d0_20240809140640 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: AADSTS50173: The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '2024-08-10T09:54:29.7248177Z' and the TokensValidFrom date (before which tokens are not valid) for this user is '2024-08-10T21:54:28.0000000Z'. Trace ID: 44ed00c1-f21c-4517-aa8d-a84a15115500 Correlation ID: aee9f970-2991-403f-9212-20adc23b6295 Timestamp: 2024-08-11 04:37:39Z
+Interactive authentication is needed. Please run:
+az login --scope https://management.core.windows.net//.default
+
+2024-08-11 12:37:45.445675: Error running command: az snapshot show --ids /subscriptions/eec3e2f3-252e-4401-b09b-d06c5c499c3a/resourceGroups/AZ-ENTAPP-NONPROD-01-EMCL-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011570_20240809140640 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: AADSTS50173: The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '2024-08-10T09:54:29.7248177Z' and the TokensValidFrom date (before which tokens are not valid) for this user is '2024-08-10T21:54:28.0000000Z'. Trace ID: 44ed00c1-f21c-4517-aa8d-a84a15115500 Correlation ID: aee9f970-2991-403f-9212-20adc23b6295 Timestamp: 2024-08-11 04:37:39Z
+Interactive authentication is needed. Please run:
+az login --scope https://management.core.windows.net//.default
+
+2024-08-11 12:37:45.779086: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011581_20240809141243 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: AADSTS50173: The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '2024-08-10T09:54:29.7248177Z' and the TokensValidFrom date (before which tokens are not valid) for this user is '2024-08-10T21:54:28.0000000Z'. Trace ID: 44ed00c1-f21c-4517-aa8d-a84a15115500 Correlation ID: aee9f970-2991-403f-9212-20adc23b6295 Timestamp: 2024-08-11 04:37:39Z
+Interactive authentication is needed. Please run:
+az login --scope https://management.core.windows.net//.default
+
+2024-08-11 12:37:46.079496: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011582_20240809141243 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: AADSTS50173: The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '2024-08-10T09:54:29.7248177Z' and the TokensValidFrom date (before which tokens are not valid) for this user is '2024-08-10T21:54:28.0000000Z'. Trace ID: 44ed00c1-f21c-4517-aa8d-a84a15115500 Correlation ID: aee9f970-2991-403f-9212-20adc23b6295 Timestamp: 2024-08-11 04:37:39Z
+Interactive authentication is needed. Please run:
+az login --scope https://management.core.windows.net//.default
+
+2024-08-11 12:37:46.377500: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011583_20240809141243 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: AADSTS50173: The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '2024-08-10T09:54:29.7248177Z' and the TokensValidFrom date (before which tokens are not valid) for this user is '2024-08-10T21:54:28.0000000Z'. Trace ID: 44ed00c1-f21c-4517-aa8d-a84a15115500 Correlation ID: aee9f970-2991-403f-9212-20adc23b6295 Timestamp: 2024-08-11 04:37:39Z
+Interactive authentication is needed. Please run:
+az login --scope https://management.core.windows.net//.default
+
+2024-08-11 12:37:46.678285: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011584_20240809141243 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: AADSTS50173: The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '2024-08-10T09:54:29.7248177Z' and the TokensValidFrom date (before which tokens are not valid) for this user is '2024-08-10T21:54:28.0000000Z'. Trace ID: 44ed00c1-f21c-4517-aa8d-a84a15115500 Correlation ID: aee9f970-2991-403f-9212-20adc23b6295 Timestamp: 2024-08-11 04:37:39Z
+Interactive authentication is needed. Please run:
+az login --scope https://management.core.windows.net//.default
+
+2024-08-11 12:37:46.998311: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114cf_20240809141243 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: AADSTS50173: The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '2024-08-10T09:54:29.7248177Z' and the TokensValidFrom date (before which tokens are not valid) for this user is '2024-08-10T21:54:28.0000000Z'. Trace ID: 44ed00c1-f21c-4517-aa8d-a84a15115500 Correlation ID: aee9f970-2991-403f-9212-20adc23b6295 Timestamp: 2024-08-11 04:37:39Z
+Interactive authentication is needed. Please run:
+az login --scope https://management.core.windows.net//.default
+
+2024-08-11 12:37:47.298962: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114d0_20240809141243 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: AADSTS50173: The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '2024-08-10T09:54:29.7248177Z' and the TokensValidFrom date (before which tokens are not valid) for this user is '2024-08-10T21:54:28.0000000Z'. Trace ID: 44ed00c1-f21c-4517-aa8d-a84a15115500 Correlation ID: aee9f970-2991-403f-9212-20adc23b6295 Timestamp: 2024-08-11 04:37:39Z
+Interactive authentication is needed. Please run:
+az login --scope https://management.core.windows.net//.default
+
+2024-08-11 12:37:47.599596: Error running command: az snapshot show --ids /subscriptions/eec3e2f3-252e-4401-b09b-d06c5c499c3a/resourceGroups/AZ-ENTAPP-NONPROD-01-EMCL-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011570_20240809141243 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: AADSTS50173: The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '2024-08-10T09:54:29.7248177Z' and the TokensValidFrom date (before which tokens are not valid) for this user is '2024-08-10T21:54:28.0000000Z'. Trace ID: 44ed00c1-f21c-4517-aa8d-a84a15115500 Correlation ID: aee9f970-2991-403f-9212-20adc23b6295 Timestamp: 2024-08-11 04:37:39Z
+Interactive authentication is needed. Please run:
+az login --scope https://management.core.windows.net//.default
+
+2024-08-11 12:37:47.894870: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011581_20240811000738 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: AADSTS50173: The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '2024-08-10T09:54:29.7248177Z' and the TokensValidFrom date (before which tokens are not valid) for this user is '2024-08-10T21:54:28.0000000Z'. Trace ID: 44ed00c1-f21c-4517-aa8d-a84a15115500 Correlation ID: aee9f970-2991-403f-9212-20adc23b6295 Timestamp: 2024-08-11 04:37:39Z
+Interactive authentication is needed. Please run:
+az login --scope https://management.core.windows.net//.default
+
+2024-08-11 12:37:48.195042: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011582_20240811000738 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: AADSTS50173: The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '2024-08-10T09:54:29.7248177Z' and the TokensValidFrom date (before which tokens are not valid) for this user is '2024-08-10T21:54:28.0000000Z'. Trace ID: 44ed00c1-f21c-4517-aa8d-a84a15115500 Correlation ID: aee9f970-2991-403f-9212-20adc23b6295 Timestamp: 2024-08-11 04:37:39Z
+Interactive authentication is needed. Please run:
+az login --scope https://management.core.windows.net//.default
+
+2024-08-11 12:37:48.495895: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011583_20240811000738 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: AADSTS50173: The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '2024-08-10T09:54:29.7248177Z' and the TokensValidFrom date (before which tokens are not valid) for this user is '2024-08-10T21:54:28.0000000Z'. Trace ID: 44ed00c1-f21c-4517-aa8d-a84a15115500 Correlation ID: aee9f970-2991-403f-9212-20adc23b6295 Timestamp: 2024-08-11 04:37:39Z
+Interactive authentication is needed. Please run:
+az login --scope https://management.core.windows.net//.default
+
+2024-08-11 12:37:48.789187: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011584_20240811000738 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: AADSTS50173: The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '2024-08-10T09:54:29.7248177Z' and the TokensValidFrom date (before which tokens are not valid) for this user is '2024-08-10T21:54:28.0000000Z'. Trace ID: 44ed00c1-f21c-4517-aa8d-a84a15115500 Correlation ID: aee9f970-2991-403f-9212-20adc23b6295 Timestamp: 2024-08-11 04:37:39Z
+Interactive authentication is needed. Please run:
+az login --scope https://management.core.windows.net//.default
+
+2024-08-11 12:37:49.092089: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114cf_20240811000738 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: AADSTS50173: The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '2024-08-10T09:54:29.7248177Z' and the TokensValidFrom date (before which tokens are not valid) for this user is '2024-08-10T21:54:28.0000000Z'. Trace ID: 44ed00c1-f21c-4517-aa8d-a84a15115500 Correlation ID: aee9f970-2991-403f-9212-20adc23b6295 Timestamp: 2024-08-11 04:37:39Z
+Interactive authentication is needed. Please run:
+az login --scope https://management.core.windows.net//.default
+
+2024-08-11 12:37:49.395178: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114d0_20240811000738 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: AADSTS50173: The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '2024-08-10T09:54:29.7248177Z' and the TokensValidFrom date (before which tokens are not valid) for this user is '2024-08-10T21:54:28.0000000Z'. Trace ID: 44ed00c1-f21c-4517-aa8d-a84a15115500 Correlation ID: aee9f970-2991-403f-9212-20adc23b6295 Timestamp: 2024-08-11 04:37:39Z
+Interactive authentication is needed. Please run:
+az login --scope https://management.core.windows.net//.default
+
+2024-08-11 12:37:49.692922: Error running command: az snapshot show --ids /subscriptions/eec3e2f3-252e-4401-b09b-d06c5c499c3a/resourceGroups/AZ-ENTAPP-NONPROD-01-EMCL-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011570_20240811000738 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: AADSTS50173: The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '2024-08-10T09:54:29.7248177Z' and the TokensValidFrom date (before which tokens are not valid) for this user is '2024-08-10T21:54:28.0000000Z'. Trace ID: 44ed00c1-f21c-4517-aa8d-a84a15115500 Correlation ID: aee9f970-2991-403f-9212-20adc23b6295 Timestamp: 2024-08-11 04:37:39Z
+Interactive authentication is needed. Please run:
+az login --scope https://management.core.windows.net//.default
+
+2024-08-11 12:37:49.988249: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011581_20240811012028 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: AADSTS50173: The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '2024-08-10T09:54:29.7248177Z' and the TokensValidFrom date (before which tokens are not valid) for this user is '2024-08-10T21:54:28.0000000Z'. Trace ID: 44ed00c1-f21c-4517-aa8d-a84a15115500 Correlation ID: aee9f970-2991-403f-9212-20adc23b6295 Timestamp: 2024-08-11 04:37:39Z
+Interactive authentication is needed. Please run:
+az login --scope https://management.core.windows.net//.default
+
+2024-08-11 12:37:50.308381: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011582_20240811012028 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: AADSTS50173: The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '2024-08-10T09:54:29.7248177Z' and the TokensValidFrom date (before which tokens are not valid) for this user is '2024-08-10T21:54:28.0000000Z'. Trace ID: 44ed00c1-f21c-4517-aa8d-a84a15115500 Correlation ID: aee9f970-2991-403f-9212-20adc23b6295 Timestamp: 2024-08-11 04:37:39Z
+Interactive authentication is needed. Please run:
+az login --scope https://management.core.windows.net//.default
+
+2024-08-11 12:37:50.607763: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011583_20240811012028 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: AADSTS50173: The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '2024-08-10T09:54:29.7248177Z' and the TokensValidFrom date (before which tokens are not valid) for this user is '2024-08-10T21:54:28.0000000Z'. Trace ID: 44ed00c1-f21c-4517-aa8d-a84a15115500 Correlation ID: aee9f970-2991-403f-9212-20adc23b6295 Timestamp: 2024-08-11 04:37:39Z
+Interactive authentication is needed. Please run:
+az login --scope https://management.core.windows.net//.default
+
+2024-08-11 12:37:50.902401: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011584_20240811012028 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: AADSTS50173: The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '2024-08-10T09:54:29.7248177Z' and the TokensValidFrom date (before which tokens are not valid) for this user is '2024-08-10T21:54:28.0000000Z'. Trace ID: 44ed00c1-f21c-4517-aa8d-a84a15115500 Correlation ID: aee9f970-2991-403f-9212-20adc23b6295 Timestamp: 2024-08-11 04:37:39Z
+Interactive authentication is needed. Please run:
+az login --scope https://management.core.windows.net//.default
+
+2024-08-11 12:37:51.200410: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114cf_20240811012028 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: AADSTS50173: The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '2024-08-10T09:54:29.7248177Z' and the TokensValidFrom date (before which tokens are not valid) for this user is '2024-08-10T21:54:28.0000000Z'. Trace ID: 44ed00c1-f21c-4517-aa8d-a84a15115500 Correlation ID: aee9f970-2991-403f-9212-20adc23b6295 Timestamp: 2024-08-11 04:37:39Z
+Interactive authentication is needed. Please run:
+az login --scope https://management.core.windows.net//.default
+
+2024-08-11 12:37:51.519207: Error running command: az snapshot show --ids /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114d0_20240811012028 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: AADSTS50173: The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '2024-08-10T09:54:29.7248177Z' and the TokensValidFrom date (before which tokens are not valid) for this user is '2024-08-10T21:54:28.0000000Z'. Trace ID: 44ed00c1-f21c-4517-aa8d-a84a15115500 Correlation ID: aee9f970-2991-403f-9212-20adc23b6295 Timestamp: 2024-08-11 04:37:39Z
+Interactive authentication is needed. Please run:
+az login --scope https://management.core.windows.net//.default
+
+2024-08-11 12:37:51.818202: Error running command: az snapshot show --ids /subscriptions/eec3e2f3-252e-4401-b09b-d06c5c499c3a/resourceGroups/AZ-ENTAPP-NONPROD-01-EMCL-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011570_20240811012028 --query '{name:name, resourceGroup:resourceGroup, timeCreated:timeCreated, diskSizeGb:diskSizeGb, provisioningState:provisioningState}' -o json
+Error: ERROR: AADSTS50173: The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '2024-08-10T09:54:29.7248177Z' and the TokensValidFrom date (before which tokens are not valid) for this user is '2024-08-10T21:54:28.0000000Z'. Trace ID: 44ed00c1-f21c-4517-aa8d-a84a15115500 Correlation ID: aee9f970-2991-403f-9212-20adc23b6295 Timestamp: 2024-08-11 04:37:39Z
+Interactive authentication is needed. Please run:
+az login --scope https://management.core.windows.net//.default
+

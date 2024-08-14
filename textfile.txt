@@ -1,0 +1,17 @@
+ 1 Use a context manager for file operations to ensure proper closing.              
+ 2 Implement caching for get_vm_info function to reduce repeated file reads.        
+ 3 Use csv module for reading the inventory file instead of manual parsing.         
+  4 Implement parallel processing for extract_vm_info function.                     
+  5 Use aiofiles for asynchronous file I/O operations.                              
+  6 Implement retry logic with exponential backoff for run_az_command.              
+  7 Use asyncio.gather with chunking for better control over concurrency in main    
+    function.                                                                       
+  8 Implement logging using the logging module instead of custom write_log function.
+  9 Use aiohttp for asynchronous HTTP requests instead of subprocess calls to az    
+    CLI.                                                                            
+ 10 Implement error handling and input validation for user inputs.                  
+ 11 Use typer or click for better CLI interface and argument parsing.               
+ 12 Implement a configuration file for default values and settings.                 
+ 13 Use dataclasses or NamedTuple for structured data instead of tuples.            
+ 14 Implement a custom exception hierarchy for better error handling.               
+ 15 Use functools.lru_cache for memoization of repetitive function calls. 

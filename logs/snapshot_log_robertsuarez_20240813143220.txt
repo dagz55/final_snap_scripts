@@ -1,0 +1,12 @@
+2024-08-13 14:32:25.248691: Failed to get details for snapshot: /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011581_20240811171446
+2024-08-13 14:32:25.249158: Error: ERROR: (ResourceNotFound) The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011581_20240811171446' under resource group 'AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+Code: ResourceNotFound
+Message: The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011581_20240811171446' under resource group 'AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+2024-08-13 14:32:26.990580: Failed to get details for snapshot: /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011582_20240811171446
+2024-08-13 14:32:26.991307: Error: ERROR: (ResourceNotFound) The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011582_20240811171446' under resource group 'AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+Code: ResourceNotFound
+Message: The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011582_20240811171446' under resource group 'AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+2024-08-13 14:32:28.837167: Failed to get details for snapshot: /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011583_20240811171446
+2024-08-13 14:32:28.837641: Error: ERROR: (ResourceNotFound) The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011583_20240811171446' under resource group 'AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix
+Code: ResourceNotFound
+Message: The Resource 'Microsoft.Compute/snapshots/RH_CHG1234567_dgm011583_20240811171446' under resource group 'AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01' was not found. For more details please go to https://aka.ms/ARMResourceNotFoundFix

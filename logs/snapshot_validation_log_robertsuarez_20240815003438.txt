@@ -1,0 +1,131 @@
+Snapshot Validation Results
+===========================
+
+Snapshot Name: RH_CHG1234567_dgm011570
+Exists: No
+
+Snapshot Name: RH_chg1234567_dgm011570
+Exists: No
+
+Snapshot Name: RH_CHG1234567_dgm011570
+Exists: No
+
+Snapshot Name: RH_chg1234567_dgm011570
+Exists: No
+
+Snapshot Name: RH_chg1234567_dgm011570
+Exists: No
+
+Snapshot Name: RH_chg1234567_dgm011570
+Exists: No
+
+Snapshot Name: RH_CHG1234567_dgm011581
+Exists: No
+
+Snapshot Name: RH_chg1234567_dgm011581
+Exists: No
+
+Snapshot Name: RH_CHG1234567_dgm011581
+Exists: No
+
+Snapshot Name: RH_chg1234567_dgm011581
+Exists: No
+
+Snapshot Name: RH_chg1234567_dgm011581
+Exists: No
+
+Snapshot Name: RH_chg1234567_dgm011581
+Exists: No
+
+Snapshot Name: RH_CHG1234567_dgm011582
+Exists: No
+
+Snapshot Name: RH_chg1234567_dgm011582
+Exists: No
+
+Snapshot Name: RH_chg1234567_dgm011582
+Exists: No
+
+Snapshot Name: RH_chg1234567_dgm011582
+Exists: No
+
+Snapshot Name: RH_chg1234567_dgm011582
+Exists: No
+
+Snapshot Name: RH_CHG1234567_dgm011583
+Exists: No
+
+Snapshot Name: RH_chg1234567_dgm011583
+Exists: No
+
+Snapshot Name: RH_CHG1234567_dgm011583
+Exists: No
+
+Snapshot Name: RH_chg1234567_dgm011583
+Exists: No
+
+Snapshot Name: RH_chg1234567_dgm011583
+Exists: No
+
+Snapshot Name: RH_chg1234567_dgm011583
+Exists: No
+
+Snapshot Name: RH_CHG1234567_dgm011584
+Exists: No
+
+Snapshot Name: RH_chg1234567_dgm011584
+Exists: No
+
+Snapshot Name: RH_CHG1234567_dgm011584
+Exists: No
+
+Snapshot Name: RH_chg1234567_dgm011584
+Exists: No
+
+Snapshot Name: RH_chg1234567_dgm011584
+Exists: No
+
+Snapshot Name: RH_chg1234567_dgm011584
+Exists: No
+
+Snapshot Name: RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114cf
+Exists: No
+
+Snapshot Name: RH_chg1234567_esns-dns-dev-admin-vm-dgm0114cf
+Exists: No
+
+Snapshot Name: RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114cf
+Exists: No
+
+Snapshot Name: RH_chg1234567_esns-dns-dev-admin-vm-dgm0114cf
+Exists: No
+
+Snapshot Name: RH_chg1234567_esns-dns-dev-admin-vm-dgm0114cf
+Exists: No
+
+Snapshot Name: RH_chg1234567_esns-dns-dev-admin-vm-dgm0114cf
+Exists: No
+
+Snapshot Name: RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114d0
+Exists: No
+
+Snapshot Name: RH_chg1234567_esns-dns-dev-admin-vm-dgm0114d0
+Exists: No
+
+Snapshot Name: RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114d0
+Exists: No
+
+Snapshot Name: RH_chg1234567_esns-dns-dev-admin-vm-dgm0114d0
+Exists: No
+
+Snapshot Name: RH_chg1234567_esns-dns-dev-admin-vm-dgm0114d0
+Exists: No
+
+Snapshot Name: RH_chg1234567_esns-dns-dev-admin-vm-dgm0114d0
+Exists: No
+
+
+Total snapshots processed: 41
+Valid snapshots: 0
+Invalid snapshots: 41
+Runtime: 5.92 seconds

@@ -1,0 +1,10 @@
+2024-08-14 11:42:27.323436: CHG Number: CHG0641771
+2024-08-14 11:42:28.825917: Switched to subscription: 48fd4545-8d1b-4da2-b81c-b9e5a6552a61
+2024-08-14 11:42:30.816051: Failed to get VM details for dgm011581
+2024-08-14 11:42:30.817019: Failed to get VM details for dgm011582
+2024-08-14 11:42:30.817690: Failed to get VM details for dgm011583
+2024-08-14 11:42:30.818010: Failed to get VM details for dgm011584
+2024-08-14 11:42:30.818227: Failed to get VM details for esns-dns-dev-admin-vm-dgm0114cf
+2024-08-14 11:42:30.818425: Failed to get VM details for esns-dns-dev-admin-vm-dgm0114d0
+2024-08-14 11:42:31.043047: Switched to subscription: eec3e2f3-252e-4401-b09b-d06c5c499c3a
+2024-08-14 11:42:31.447957: Failed to get VM details for dgm011570

@@ -1,17 +1,13 @@
+import os
 import asyncio
-import csv
+import json
 import datetime
 import getpass
-import json
-import os
-import aiofiles
-
 from collections import defaultdict
-from functools import lru_cache
 from rich.console import Console
+from rich.progress import Progress, SpinnerColumn, BarColumn, TextColumn
 from rich.live import Live
 from rich.panel import Panel
-from rich.progress import BarColumn, Progress, SpinnerColumn, TextColumn
 from rich.table import Table
 
 console = Console()
@@ -28,33 +24,6 @@ expire_days = 3
 semaphore = asyncio.Semaphore(10)
 successful_snapshots = []
 failed_snapshots = []
-inventory_file = 'linux_vm-inventory.csv'
-
-
-@lru_cache(maxsize=None)
-def get_vm_info(hostname, inventory_file):
-    with open(inventory_file, 'r', newline='') as f:
-        reader = csv.reader(f)
-        for row in reader:
-            if hostname in row:
-                return ','.join(row)
-    return None
-
-async def extract_vm_info(host_file):
-    snapshot_vmlist_file = 'snapshot_vmlist.txt'
-    if not os.path.exists(snapshot_vmlist_file):
-        console.print(f"[bold red]Error: Snapshot VM list file '{snapshot_vmlist_file}' not found.[/bold red]")
-        return None
-
-    async with aiofiles.open(snapshot_vmlist_file, 'r') as f:
-        vm_list = await f.read()
-        vm_list = vm_list.splitlines()
-
-    if not vm_list:
-        console.print(f"[bold red]Error: No VM information found in '{snapshot_vmlist_file}'.[/bold red]")
-        return None
-
-    return vm_list
 
 async def run_az_command(command, max_retries=3, delay=5):
     for attempt in range(max_retries):
@@ -74,9 +43,9 @@ async def run_az_command(command, max_retries=3, delay=5):
                 await asyncio.sleep(delay)
     return "", stderr.decode().strip(), process.returncode
 
-async def write_log(message):
-    async with aiofiles.open(log_file, "a") as f:
-        await f.write(f"{datetime.datetime.now()}: {message}\n")
+def write_log(message):
+    with open(log_file, "a") as f:
+        f.write(f"{datetime.datetime.now()}: {message}\n")
 
 def write_snapshot_rid(snapshot_id):
     with open(snap_rid_list_file, "a") as f:
@@ -84,9 +53,9 @@ def write_snapshot_rid(snapshot_id):
 
 async def process_vm(resource_id, vm_name, resource_group, disk_id, progress, task):
     async with semaphore:
-        await write_log(f"Processing VM: {vm_name}")
-        await write_log(f"Resource ID: {resource_id}")
-        await write_log(f"Resource group: {resource_group}")
+        write_log(f"Processing VM: {vm_name}")
+        write_log(f"Resource ID: {resource_id}")
+        write_log(f"Resource group: {resource_group}")
 
         snapshot_name = f"RH_{chg_number}_{vm_name}_{timestamp}"
         stdout, stderr, returncode = await run_az_command(
@@ -94,21 +63,21 @@ async def process_vm(resource_id, vm_name, resource_group, disk_id, progress, ta
         )
         
         if returncode != 0:
-            await write_log(f"Failed to create snapshot for VM: {vm_name}")
-            await write_log(f"Error: {stderr}")
+            write_log(f"Failed to create snapshot for VM: {vm_name}")
+            write_log(f"Error: {stderr}")
             failed_snapshots.append((vm_name, "Failed to create snapshot"))
         else:
-            await write_log(f"Snapshot created: {snapshot_name}")
-            await write_log(json.dumps(json.loads(stdout), indent=2))
+            write_log(f"Snapshot created: {snapshot_name}")
+            write_log(json.dumps(json.loads(stdout), indent=2))
             
             snapshot_data = json.loads(stdout)
             snapshot_id = snapshot_data.get('id')
             if snapshot_id:
                 write_snapshot_rid(snapshot_id)
-                await write_log(f"Snapshot resource ID added to snap_rid_list.txt: {snapshot_id}")
+                write_log(f"Snapshot resource ID added to snap_rid_list.txt: {snapshot_id}")
                 successful_snapshots.append((vm_name, snapshot_name))
             else:
-                await write_log(f"Warning: Could not extract snapshot resource ID for {snapshot_name}")
+                write_log(f"Warning: Could not extract snapshot resource ID for {snapshot_name}")
                 failed_snapshots.append((vm_name, "Failed to extract snapshot ID"))
 
         progress.update(task, completed=100)
@@ -116,7 +85,7 @@ async def process_vm(resource_id, vm_name, resource_group, disk_id, progress, ta
 def group_vms_by_subscription(vm_list):
     grouped_vms = defaultdict(list)
     for line in vm_list:
-        resource_id, vm_name = line.rsplit(None, 1)
+        resource_id, vm_name = line.split()
         subscription_id = resource_id.split("/")[2]
         grouped_vms[subscription_id].append((resource_id, vm_name))
     return grouped_vms
@@ -131,18 +100,17 @@ async def main():
     os.makedirs(log_dir, exist_ok=True)
 
     # Get input from user
-    host_file = console.input("Please enter your host file (default: host): ") or "host"
+    host_file = console.input("Enter the filename with VM list (default: snapshot_vmlist.txt): ") or "snapshot_vmlist.txt"
     chg_number = console.input("Enter the CHG number: ")
     
-    await write_log(f"CHG Number: {chg_number}")
+    write_log(f"CHG Number: {chg_number}")
 
-    vm_list = await extract_vm_info(host_file)
-    if vm_list is None:
-        return
-
-    total_vms = len(vm_list)
-    if total_vms == 0:
-        console.print("[bold red]Error: No valid VM information found.[/bold red]")
+    try:
+        with open(host_file) as file:
+            vm_list = [line.strip() for line in file if line.strip()]
+            total_vms = len(vm_list)
+    except FileNotFoundError:
+        console.print(f"[bold red]Error: {host_file} file not found.[/bold red]")
         return
 
     grouped_vms = group_vms_by_subscription(vm_list)
@@ -167,15 +135,15 @@ async def main():
             # Switch to the current subscription
             stdout, stderr, returncode = await run_az_command(f"az account set --subscription {subscription_id}")
             if returncode != 0:
-                await write_log(f"Failed to set subscription ID: {subscription_id}")
-                await write_log(f"Error: {stderr}")
+                write_log(f"Failed to set subscription ID: {subscription_id}")
+                write_log(f"Error: {stderr}")
                 for _, vm_name in vms:
                     failed_snapshots.append((vm_name, "Failed to set subscription"))
                     progress.update(vm_tasks[vm_name], completed=100)
                     progress.update(overall_task, advance=1)
                 continue
 
-            await write_log(f"Switched to subscription: {subscription_id}")
+            write_log(f"Switched to subscription: {subscription_id}")
 
             tasks = []
             for resource_id, vm_name in vms:
@@ -184,8 +152,8 @@ async def main():
                     f"az vm show --ids {resource_id} --query '{{resourceGroup:resourceGroup, diskId:storageProfile.osDisk.managedDisk.id}}' -o json"
                 )
                 if returncode != 0:
-                    await write_log(f"Failed to get VM details for {vm_name}")
-                    await write_log(f"Error: {stderr}")
+                    write_log(f"Failed to get VM details for {vm_name}")
+                    write_log(f"Error: {stderr}")
                     failed_snapshots.append((vm_name, "Failed to get VM details"))
                     progress.update(vm_tasks[vm_name], completed=100)
                     progress.update(overall_task, advance=1)

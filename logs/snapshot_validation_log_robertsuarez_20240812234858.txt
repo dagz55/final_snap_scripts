@@ -1,0 +1,249 @@
+Snapshot Validation Results
+===========================
+
+Snapshot Name: Not found: 
+Exists: No
+
+Snapshot Name: Not found: RH_CHG1234567_dgm011581
+Exists: No
+
+Snapshot Name: Not found: RH_CHG1234567_dgm011582
+Exists: No
+
+Snapshot Name: Not found: RH_CHG1234567_dgm011583
+Exists: No
+
+Snapshot Name: Not found: RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114cf
+Exists: No
+
+Snapshot Name: Not found: RH_CHG1234567_dgm011584
+Exists: No
+
+Snapshot Name: Not found: RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114d0
+Exists: No
+
+Snapshot Name: Not found: RH_CHG1234567_dgm011570
+Exists: No
+
+Snapshot Name: Not found: RH_CHG1234567_dgm011582
+Exists: No
+
+Snapshot Name: Not found: RH_CHG1234567_dgm011581
+Exists: No
+
+Snapshot Name: Not found: RH_CHG1234567_dgm011583
+Exists: No
+
+Snapshot Name: Not found: RH_CHG1234567_dgm011584
+Exists: No
+
+Snapshot Name: Not found: RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114cf
+Exists: No
+
+Snapshot Name: Not found: RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114d0
+Exists: No
+
+Snapshot Name: Not found: RH_CHG1234567_dgm011570
+Exists: No
+
+Snapshot Name: RH_CHG1234567_dgm011581
+Exists: Yes
+Resource Group: AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01
+Time Created: 2024-08-12T14:36:25.0431362+00:00
+Size (GB): None
+State: Succeeded
+
+Snapshot Name: RH_CHG1234567_dgm011582
+Exists: Yes
+Resource Group: AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01
+Time Created: 2024-08-12T14:36:26.1993379+00:00
+Size (GB): None
+State: Succeeded
+
+Snapshot Name: RH_CHG1234567_dgm011583
+Exists: Yes
+Resource Group: AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01
+Time Created: 2024-08-12T14:36:26.3400722+00:00
+Size (GB): None
+State: Succeeded
+
+Snapshot Name: RH_CHG1234567_dgm011584
+Exists: Yes
+Resource Group: AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01
+Time Created: 2024-08-12T14:36:27.2306474+00:00
+Size (GB): None
+State: Succeeded
+
+Snapshot Name: RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114cf
+Exists: Yes
+Resource Group: AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01
+Time Created: 2024-08-12T14:36:29.0919972+00:00
+Size (GB): None
+State: Succeeded
+
+Snapshot Name: RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114d0
+Exists: Yes
+Resource Group: AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01
+Time Created: 2024-08-12T14:36:30.2794956+00:00
+Size (GB): None
+State: Succeeded
+
+Snapshot Name: RH_CHG1234567_dgm011570
+Exists: Yes
+Resource Group: AZ-ENTAPP-NONPROD-01-EMCL-DEV-WESTUS-RG-01
+Time Created: 2024-08-12T14:36:46.3178768+00:00
+Size (GB): None
+State: Succeeded
+
+Snapshot Name: RH_CHG1234567_dgm011581
+Exists: Yes
+Resource Group: AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01
+Time Created: 2024-08-12T15:40:47.0870164+00:00
+Size (GB): None
+State: Succeeded
+
+Snapshot Name: RH_CHG1234567_dgm011582
+Exists: Yes
+Resource Group: AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01
+Time Created: 2024-08-12T15:40:47.8214222+00:00
+Size (GB): None
+State: Succeeded
+
+Snapshot Name: RH_CHG1234567_dgm011583
+Exists: Yes
+Resource Group: AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01
+Time Created: 2024-08-12T15:40:48.8839372+00:00
+Size (GB): None
+State: Succeeded
+
+Snapshot Name: RH_CHG1234567_dgm011584
+Exists: Yes
+Resource Group: AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01
+Time Created: 2024-08-12T15:40:49.649547+00:00
+Size (GB): None
+State: Succeeded
+
+Snapshot Name: RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114cf
+Exists: Yes
+Resource Group: AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01
+Time Created: 2024-08-12T15:40:52.1594577+00:00
+Size (GB): None
+State: Succeeded
+
+Snapshot Name: RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114d0
+Exists: Yes
+Resource Group: AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01
+Time Created: 2024-08-12T15:40:52.6282041+00:00
+Size (GB): None
+State: Succeeded
+
+Snapshot Name: RH_CHG1234567_dgm011570
+Exists: Yes
+Resource Group: AZ-ENTAPP-NONPROD-01-EMCL-DEV-WESTUS-RG-01
+Time Created: 2024-08-12T15:41:08.8788006+00:00
+Size (GB): None
+State: Succeeded
+
+Snapshot Name: RH_CHG1234567_dgm011581
+Exists: Yes
+Resource Group: AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01
+Time Created: 2024-08-12T15:44:08.1829928+00:00
+Size (GB): None
+State: Succeeded
+
+Snapshot Name: RH_CHG1234567_dgm011582
+Exists: Yes
+Resource Group: AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01
+Time Created: 2024-08-12T15:44:09.1518054+00:00
+Size (GB): None
+State: Succeeded
+
+Snapshot Name: RH_CHG1234567_dgm011583
+Exists: Yes
+Resource Group: AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01
+Time Created: 2024-08-12T15:44:11.1674054+00:00
+Size (GB): None
+State: Succeeded
+
+Snapshot Name: RH_CHG1234567_dgm011584
+Exists: Yes
+Resource Group: AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01
+Time Created: 2024-08-12T15:44:12.02684+00:00
+Size (GB): None
+State: Succeeded
+
+Snapshot Name: RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114cf
+Exists: Yes
+Resource Group: AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01
+Time Created: 2024-08-12T15:44:13.5651387+00:00
+Size (GB): None
+State: Succeeded
+
+Snapshot Name: RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114d0
+Exists: Yes
+Resource Group: AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01
+Time Created: 2024-08-12T15:44:15.3151281+00:00
+Size (GB): None
+State: Succeeded
+
+Snapshot Name: RH_CHG1234567_dgm011570
+Exists: Yes
+Resource Group: AZ-ENTAPP-NONPROD-01-EMCL-DEV-WESTUS-RG-01
+Time Created: 2024-08-12T15:44:31.3491+00:00
+Size (GB): None
+State: Succeeded
+
+Snapshot Name: RH_CHG1234567_dgm011581
+Exists: Yes
+Resource Group: AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01
+Time Created: 2024-08-12T15:46:52.6849385+00:00
+Size (GB): None
+State: Succeeded
+
+Snapshot Name: RH_CHG1234567_dgm011582
+Exists: Yes
+Resource Group: AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01
+Time Created: 2024-08-12T15:46:53.8881647+00:00
+Size (GB): None
+State: Succeeded
+
+Snapshot Name: RH_CHG1234567_dgm011583
+Exists: Yes
+Resource Group: AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01
+Time Created: 2024-08-12T15:46:55.1380936+00:00
+Size (GB): None
+State: Succeeded
+
+Snapshot Name: RH_CHG1234567_dgm011584
+Exists: Yes
+Resource Group: AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01
+Time Created: 2024-08-12T15:46:55.7474243+00:00
+Size (GB): None
+State: Succeeded
+
+Snapshot Name: RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114cf
+Exists: Yes
+Resource Group: AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01
+Time Created: 2024-08-12T15:46:57.8148498+00:00
+Size (GB): None
+State: Succeeded
+
+Snapshot Name: RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114d0
+Exists: Yes
+Resource Group: AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01
+Time Created: 2024-08-12T15:46:58.955473+00:00
+Size (GB): None
+State: Succeeded
+
+Snapshot Name: RH_CHG1234567_dgm011570
+Exists: Yes
+Resource Group: AZ-ENTAPP-NONPROD-01-EMCL-DEV-WESTUS-RG-01
+Time Created: 2024-08-12T15:47:14.9129822+00:00
+Size (GB): None
+State: Succeeded
+
+
+Total snapshots processed: 43
+Valid snapshots: 28
+Invalid snapshots: 15
+Runtime: 64.57 seconds

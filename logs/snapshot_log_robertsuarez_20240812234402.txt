@@ -1,0 +1,473 @@
+2024-08-12 23:44:02.498562: CHG Number: CHG1234567
+2024-08-12 23:44:02.907506: Switched to subscription: 48fd4545-8d1b-4da2-b81c-b9e5a6552a61
+2024-08-12 23:44:04.137552: Processing VM: dgm011581
+2024-08-12 23:44:04.138021: Resource ID: /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/virtualMachines/dgm011581
+2024-08-12 23:44:04.138232: Resource group: AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01
+2024-08-12 23:44:05.214738: Processing VM: dgm011582
+2024-08-12 23:44:05.215194: Resource ID: /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/virtualMachines/dgm011582
+2024-08-12 23:44:05.215475: Resource group: AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01
+2024-08-12 23:44:06.345087: Processing VM: dgm011583
+2024-08-12 23:44:06.345524: Resource ID: /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/virtualMachines/dgm011583
+2024-08-12 23:44:06.345767: Resource group: AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01
+2024-08-12 23:44:08.015943: Processing VM: dgm011584
+2024-08-12 23:44:08.022898: Resource ID: /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/virtualMachines/dgm011584
+2024-08-12 23:44:08.023750: Resource group: AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01
+2024-08-12 23:44:09.199248: Processing VM: esns-dns-dev-admin-vm-dgm0114cf
+2024-08-12 23:44:09.199637: Resource ID: /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01/providers/Microsoft.Compute/virtualMachines/esns-dns-dev-admin-vm-dgm0114cf
+2024-08-12 23:44:09.199906: Resource group: AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01
+2024-08-12 23:44:10.447798: Processing VM: esns-dns-dev-admin-vm-dgm0114d0
+2024-08-12 23:44:10.448128: Resource ID: /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01/providers/Microsoft.Compute/virtualMachines/esns-dns-dev-admin-vm-dgm0114d0
+2024-08-12 23:44:10.448367: Resource group: AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01
+2024-08-12 23:44:19.667575: Snapshot created: RH_CHG1234567_dgm011581_20240812234402
+2024-08-12 23:44:19.668281: {
+  "completionPercent": null,
+  "copyCompletionError": null,
+  "creationData": {
+    "createOption": "Copy",
+    "elasticSanResourceId": null,
+    "galleryImageReference": null,
+    "imageReference": null,
+    "logicalSectorSize": null,
+    "performancePlus": null,
+    "provisionedBandwidthCopySpeed": null,
+    "securityDataUri": null,
+    "sourceResourceId": "/subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/az-core-nonprod-01-ebss-dev-westus-rg-01/providers/Microsoft.Compute/disks/dgv01226c-OSdisk-00",
+    "sourceUniqueId": "949598fb-8079-4b58-9e01-e56e7621fa06",
+    "sourceUri": null,
+    "storageAccountId": null,
+    "uploadSizeBytes": null
+  },
+  "dataAccessAuthMode": null,
+  "diskAccessId": null,
+  "diskSizeBytes": 53687091200,
+  "diskSizeGb": 50,
+  "diskState": "Unattached",
+  "encryption": {
+    "diskEncryptionSetId": null,
+    "type": "EncryptionAtRestWithPlatformKey"
+  },
+  "encryptionSettingsCollection": null,
+  "extendedLocation": null,
+  "hyperVGeneration": "V1",
+  "id": "/subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011581_20240812234402",
+  "incremental": false,
+  "incrementalSnapshotFamilyId": null,
+  "location": "westus",
+  "managedBy": null,
+  "name": "RH_CHG1234567_dgm011581_20240812234402",
+  "networkAccessPolicy": "AllowAll",
+  "osType": "Linux",
+  "provisioningState": "Succeeded",
+  "publicNetworkAccess": "Enabled",
+  "purchasePlan": null,
+  "resourceGroup": "AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01",
+  "securityProfile": null,
+  "sku": {
+    "name": "Standard_LRS",
+    "tier": "Standard"
+  },
+  "supportedCapabilities": null,
+  "supportsHibernation": null,
+  "tags": {
+    "appcode": "ebss",
+    "appname": "ebss - electronic business synchrony sentinel (ebss)",
+    "costcenter": "72211",
+    "drtier": "dr1",
+    "environment": "dev",
+    "portfolio": "cloud and it operations"
+  },
+  "timeCreated": "2024-08-12T15:44:08.182992+00:00",
+  "type": "Microsoft.Compute/snapshots",
+  "uniqueId": "4becf8da-2da5-4edc-ba70-4dffe9f9ad84"
+}
+2024-08-12 23:44:19.668920: Snapshot resource ID added to snap_rid_list.txt: /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011581_20240812234402
+2024-08-12 23:44:20.099602: Snapshot created: RH_CHG1234567_dgm011582_20240812234402
+2024-08-12 23:44:20.100003: {
+  "completionPercent": null,
+  "copyCompletionError": null,
+  "creationData": {
+    "createOption": "Copy",
+    "elasticSanResourceId": null,
+    "galleryImageReference": null,
+    "imageReference": null,
+    "logicalSectorSize": null,
+    "performancePlus": null,
+    "provisionedBandwidthCopySpeed": null,
+    "securityDataUri": null,
+    "sourceResourceId": "/subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/az-core-nonprod-01-ebss-dev-westus-rg-01/providers/Microsoft.Compute/disks/dgv0121c7-OSdisk-00",
+    "sourceUniqueId": "6ebdac99-4ba3-4885-abd3-88fd1d4f91e9",
+    "sourceUri": null,
+    "storageAccountId": null,
+    "uploadSizeBytes": null
+  },
+  "dataAccessAuthMode": null,
+  "diskAccessId": null,
+  "diskSizeBytes": 53687091200,
+  "diskSizeGb": 50,
+  "diskState": "Unattached",
+  "encryption": {
+    "diskEncryptionSetId": null,
+    "type": "EncryptionAtRestWithPlatformKey"
+  },
+  "encryptionSettingsCollection": null,
+  "extendedLocation": null,
+  "hyperVGeneration": "V1",
+  "id": "/subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011582_20240812234402",
+  "incremental": false,
+  "incrementalSnapshotFamilyId": null,
+  "location": "westus",
+  "managedBy": null,
+  "name": "RH_CHG1234567_dgm011582_20240812234402",
+  "networkAccessPolicy": "AllowAll",
+  "osType": "Linux",
+  "provisioningState": "Succeeded",
+  "publicNetworkAccess": "Enabled",
+  "purchasePlan": null,
+  "resourceGroup": "AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01",
+  "securityProfile": null,
+  "sku": {
+    "name": "Standard_LRS",
+    "tier": "Standard"
+  },
+  "supportedCapabilities": null,
+  "supportsHibernation": null,
+  "tags": {
+    "appcode": "ebss",
+    "appname": "ebss - electronic business synchrony sentinel (ebss)",
+    "costcenter": "72211",
+    "drtier": "dr1",
+    "environment": "dev",
+    "portfolio": "cloud and it operations"
+  },
+  "timeCreated": "2024-08-12T15:44:09.151805+00:00",
+  "type": "Microsoft.Compute/snapshots",
+  "uniqueId": "b3b6a340-b936-4268-b37e-68feae489e2d"
+}
+2024-08-12 23:44:20.100313: Snapshot resource ID added to snap_rid_list.txt: /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011582_20240812234402
+2024-08-12 23:44:22.115987: Snapshot created: RH_CHG1234567_dgm011583_20240812234402
+2024-08-12 23:44:22.116431: {
+  "completionPercent": null,
+  "copyCompletionError": null,
+  "creationData": {
+    "createOption": "Copy",
+    "elasticSanResourceId": null,
+    "galleryImageReference": null,
+    "imageReference": null,
+    "logicalSectorSize": null,
+    "performancePlus": null,
+    "provisionedBandwidthCopySpeed": null,
+    "securityDataUri": null,
+    "sourceResourceId": "/subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/az-core-nonprod-01-ebss-dev-westus-rg-01/providers/Microsoft.Compute/disks/dgv011c26-OSdisk-00",
+    "sourceUniqueId": "9cebfa98-5b72-4274-ba9b-c4ac94b3b864",
+    "sourceUri": null,
+    "storageAccountId": null,
+    "uploadSizeBytes": null
+  },
+  "dataAccessAuthMode": null,
+  "diskAccessId": null,
+  "diskSizeBytes": 53687091200,
+  "diskSizeGb": 50,
+  "diskState": "Unattached",
+  "encryption": {
+    "diskEncryptionSetId": null,
+    "type": "EncryptionAtRestWithPlatformKey"
+  },
+  "encryptionSettingsCollection": null,
+  "extendedLocation": null,
+  "hyperVGeneration": "V1",
+  "id": "/subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011583_20240812234402",
+  "incremental": false,
+  "incrementalSnapshotFamilyId": null,
+  "location": "westus",
+  "managedBy": null,
+  "name": "RH_CHG1234567_dgm011583_20240812234402",
+  "networkAccessPolicy": "AllowAll",
+  "osType": "Linux",
+  "provisioningState": "Succeeded",
+  "publicNetworkAccess": "Enabled",
+  "purchasePlan": null,
+  "resourceGroup": "AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01",
+  "securityProfile": null,
+  "sku": {
+    "name": "Standard_LRS",
+    "tier": "Standard"
+  },
+  "supportedCapabilities": null,
+  "supportsHibernation": null,
+  "tags": {
+    "appcode": "ebss",
+    "appname": "ebss - electronic business synchrony sentinel (ebss)",
+    "costcenter": "72211",
+    "drtier": "dr1",
+    "environment": "dev",
+    "portfolio": "cloud and it operations"
+  },
+  "timeCreated": "2024-08-12T15:44:11.167405+00:00",
+  "type": "Microsoft.Compute/snapshots",
+  "uniqueId": "903ba073-eb1e-47b4-9831-eb9593a27bd4"
+}
+2024-08-12 23:44:22.116820: Snapshot resource ID added to snap_rid_list.txt: /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011583_20240812234402
+2024-08-12 23:44:23.593255: Snapshot created: RH_CHG1234567_dgm011584_20240812234402
+2024-08-12 23:44:23.593682: {
+  "completionPercent": null,
+  "copyCompletionError": null,
+  "creationData": {
+    "createOption": "Copy",
+    "elasticSanResourceId": null,
+    "galleryImageReference": null,
+    "imageReference": null,
+    "logicalSectorSize": null,
+    "performancePlus": null,
+    "provisionedBandwidthCopySpeed": null,
+    "securityDataUri": null,
+    "sourceResourceId": "/subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/az-core-nonprod-01-ebss-dev-westus-rg-01/providers/Microsoft.Compute/disks/dgv011c27-OSdisk-00",
+    "sourceUniqueId": "aec9234d-4b46-47e8-afc6-57f1c2737ff1",
+    "sourceUri": null,
+    "storageAccountId": null,
+    "uploadSizeBytes": null
+  },
+  "dataAccessAuthMode": null,
+  "diskAccessId": null,
+  "diskSizeBytes": 53687091200,
+  "diskSizeGb": 50,
+  "diskState": "Unattached",
+  "encryption": {
+    "diskEncryptionSetId": null,
+    "type": "EncryptionAtRestWithPlatformKey"
+  },
+  "encryptionSettingsCollection": null,
+  "extendedLocation": null,
+  "hyperVGeneration": "V1",
+  "id": "/subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011584_20240812234402",
+  "incremental": false,
+  "incrementalSnapshotFamilyId": null,
+  "location": "westus",
+  "managedBy": null,
+  "name": "RH_CHG1234567_dgm011584_20240812234402",
+  "networkAccessPolicy": "AllowAll",
+  "osType": "Linux",
+  "provisioningState": "Succeeded",
+  "publicNetworkAccess": "Enabled",
+  "purchasePlan": null,
+  "resourceGroup": "AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01",
+  "securityProfile": null,
+  "sku": {
+    "name": "Standard_LRS",
+    "tier": "Standard"
+  },
+  "supportedCapabilities": null,
+  "supportsHibernation": null,
+  "tags": {
+    "appcode": "ebss",
+    "appname": "ebss - electronic business synchrony sentinel (ebss)",
+    "costcenter": "72211",
+    "drtier": "dr1",
+    "environment": "dev",
+    "portfolio": "cloud and it operations"
+  },
+  "timeCreated": "2024-08-12T15:44:12.026840+00:00",
+  "type": "Microsoft.Compute/snapshots",
+  "uniqueId": "2f043a26-a2ec-41be-90e6-7efe94c2d897"
+}
+2024-08-12 23:44:23.593947: Snapshot resource ID added to snap_rid_list.txt: /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011584_20240812234402
+2024-08-12 23:44:25.095896: Snapshot created: RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114cf_20240812234402
+2024-08-12 23:44:25.096559: {
+  "completionPercent": null,
+  "copyCompletionError": null,
+  "creationData": {
+    "createOption": "Copy",
+    "elasticSanResourceId": null,
+    "galleryImageReference": null,
+    "imageReference": null,
+    "logicalSectorSize": null,
+    "performancePlus": null,
+    "provisionedBandwidthCopySpeed": null,
+    "securityDataUri": null,
+    "sourceResourceId": "/subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01/providers/Microsoft.Compute/disks/esns-dgm0114cf-dev-mdos-01",
+    "sourceUniqueId": "498171a3-3fc1-4616-afab-46bd37951cd9",
+    "sourceUri": null,
+    "storageAccountId": null,
+    "uploadSizeBytes": null
+  },
+  "dataAccessAuthMode": null,
+  "diskAccessId": null,
+  "diskSizeBytes": 53687091200,
+  "diskSizeGb": 50,
+  "diskState": "Unattached",
+  "encryption": {
+    "diskEncryptionSetId": null,
+    "type": "EncryptionAtRestWithPlatformKey"
+  },
+  "encryptionSettingsCollection": null,
+  "extendedLocation": null,
+  "hyperVGeneration": "V1",
+  "id": "/subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114cf_20240812234402",
+  "incremental": false,
+  "incrementalSnapshotFamilyId": null,
+  "location": "eastus",
+  "managedBy": null,
+  "name": "RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114cf_20240812234402",
+  "networkAccessPolicy": "AllowAll",
+  "osType": "Linux",
+  "provisioningState": "Succeeded",
+  "publicNetworkAccess": "Enabled",
+  "purchasePlan": null,
+  "resourceGroup": "AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01",
+  "securityProfile": null,
+  "sku": {
+    "name": "Standard_LRS",
+    "tier": "Standard"
+  },
+  "supportedCapabilities": {
+    "acceleratedNetwork": null,
+    "architecture": "x64",
+    "diskControllerTypes": null
+  },
+  "supportsHibernation": null,
+  "tags": {
+    "appcode": "esns",
+    "appname": "bind - dns - ipam - men and mice (esns)",
+    "costcenter": "26138",
+    "drtier": "dr0",
+    "environment": "dev",
+    "portfolio": "it operations"
+  },
+  "timeCreated": "2024-08-12T15:44:13.565138+00:00",
+  "type": "Microsoft.Compute/snapshots",
+  "uniqueId": "71135078-bd19-448e-9fae-1c3c55ad8c68"
+}
+2024-08-12 23:44:25.096984: Snapshot resource ID added to snap_rid_list.txt: /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114cf_20240812234402
+2024-08-12 23:44:26.239869: Snapshot created: RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114d0_20240812234402
+2024-08-12 23:44:26.240249: {
+  "completionPercent": null,
+  "copyCompletionError": null,
+  "creationData": {
+    "createOption": "Copy",
+    "elasticSanResourceId": null,
+    "galleryImageReference": null,
+    "imageReference": null,
+    "logicalSectorSize": null,
+    "performancePlus": null,
+    "provisionedBandwidthCopySpeed": null,
+    "securityDataUri": null,
+    "sourceResourceId": "/subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01/providers/Microsoft.Compute/disks/esns-dgm0114d0-dev-mdos-01",
+    "sourceUniqueId": "a2fe8ca5-0455-40ef-ac45-5cb1192dd886",
+    "sourceUri": null,
+    "storageAccountId": null,
+    "uploadSizeBytes": null
+  },
+  "dataAccessAuthMode": null,
+  "diskAccessId": null,
+  "diskSizeBytes": 53687091200,
+  "diskSizeGb": 50,
+  "diskState": "Unattached",
+  "encryption": {
+    "diskEncryptionSetId": null,
+    "type": "EncryptionAtRestWithPlatformKey"
+  },
+  "encryptionSettingsCollection": null,
+  "extendedLocation": null,
+  "hyperVGeneration": "V1",
+  "id": "/subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114d0_20240812234402",
+  "incremental": false,
+  "incrementalSnapshotFamilyId": null,
+  "location": "eastus",
+  "managedBy": null,
+  "name": "RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114d0_20240812234402",
+  "networkAccessPolicy": "AllowAll",
+  "osType": "Linux",
+  "provisioningState": "Succeeded",
+  "publicNetworkAccess": "Enabled",
+  "purchasePlan": null,
+  "resourceGroup": "AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01",
+  "securityProfile": null,
+  "sku": {
+    "name": "Standard_LRS",
+    "tier": "Standard"
+  },
+  "supportedCapabilities": {
+    "acceleratedNetwork": null,
+    "architecture": "x64",
+    "diskControllerTypes": null
+  },
+  "supportsHibernation": null,
+  "tags": {
+    "appcode": "esns",
+    "appname": "bind - dns - ipam - men and mice (esns)",
+    "costcenter": "26138",
+    "drtier": "dr0",
+    "environment": "dev",
+    "portfolio": "it operations"
+  },
+  "timeCreated": "2024-08-12T15:44:15.315128+00:00",
+  "type": "Microsoft.Compute/snapshots",
+  "uniqueId": "e0f96b8d-8a7d-4ddc-ab7e-52c0b7854879"
+}
+2024-08-12 23:44:26.240595: Snapshot resource ID added to snap_rid_list.txt: /subscriptions/48fd4545-8d1b-4da2-b81c-b9e5a6552a61/resourceGroups/AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114d0_20240812234402
+2024-08-12 23:44:26.514578: Switched to subscription: eec3e2f3-252e-4401-b09b-d06c5c499c3a
+2024-08-12 23:44:27.757481: Processing VM: dgm011570
+2024-08-12 23:44:27.758019: Resource ID: /subscriptions/eec3e2f3-252e-4401-b09b-d06c5c499c3a/resourceGroups/AZ-ENTAPP-NONPROD-01-EMCL-DEV-WESTUS-RG-01/providers/Microsoft.Compute/virtualMachines/dgm011570
+2024-08-12 23:44:27.758340: Resource group: AZ-ENTAPP-NONPROD-01-EMCL-DEV-WESTUS-RG-01
+2024-08-12 23:44:42.227828: Snapshot created: RH_CHG1234567_dgm011570_20240812234402
+2024-08-12 23:44:42.228522: {
+  "completionPercent": null,
+  "copyCompletionError": null,
+  "creationData": {
+    "createOption": "Copy",
+    "elasticSanResourceId": null,
+    "galleryImageReference": null,
+    "imageReference": null,
+    "logicalSectorSize": null,
+    "performancePlus": null,
+    "provisionedBandwidthCopySpeed": null,
+    "securityDataUri": null,
+    "sourceResourceId": "/subscriptions/eec3e2f3-252e-4401-b09b-d06c5c499c3a/resourceGroups/az-entapp-nonprod-01-emcl-dev-westus-rg-01/providers/Microsoft.Compute/disks/dgv01213c-OSdisk-00",
+    "sourceUniqueId": "36599305-af8c-41f3-9b27-99006f188ceb",
+    "sourceUri": null,
+    "storageAccountId": null,
+    "uploadSizeBytes": null
+  },
+  "dataAccessAuthMode": null,
+  "diskAccessId": null,
+  "diskSizeBytes": 53687091200,
+  "diskSizeGb": 50,
+  "diskState": "Unattached",
+  "encryption": {
+    "diskEncryptionSetId": null,
+    "type": "EncryptionAtRestWithPlatformKey"
+  },
+  "encryptionSettingsCollection": null,
+  "extendedLocation": null,
+  "hyperVGeneration": "V1",
+  "id": "/subscriptions/eec3e2f3-252e-4401-b09b-d06c5c499c3a/resourceGroups/AZ-ENTAPP-NONPROD-01-EMCL-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011570_20240812234402",
+  "incremental": false,
+  "incrementalSnapshotFamilyId": null,
+  "location": "westus",
+  "managedBy": null,
+  "name": "RH_CHG1234567_dgm011570_20240812234402",
+  "networkAccessPolicy": "AllowAll",
+  "osType": "Linux",
+  "provisioningState": "Succeeded",
+  "publicNetworkAccess": "Enabled",
+  "purchasePlan": null,
+  "resourceGroup": "AZ-ENTAPP-NONPROD-01-EMCL-DEV-WESTUS-RG-01",
+  "securityProfile": null,
+  "sku": {
+    "name": "Standard_LRS",
+    "tier": "Standard"
+  },
+  "supportedCapabilities": null,
+  "supportsHibernation": null,
+  "tags": {
+    "appcode": "emcl",
+    "appname": "customer lookup (emcl)",
+    "costcenter": "72204",
+    "drtier": "dr1",
+    "environment": "dev",
+    "portfolio": "digital customer experience"
+  },
+  "timeCreated": "2024-08-12T15:44:31.349100+00:00",
+  "type": "Microsoft.Compute/snapshots",
+  "uniqueId": "7a09aca8-b1ec-4f09-a024-64bd19bea62a"
+}
+2024-08-12 23:44:42.229019: Snapshot resource ID added to snap_rid_list.txt: /subscriptions/eec3e2f3-252e-4401-b09b-d06c5c499c3a/resourceGroups/AZ-ENTAPP-NONPROD-01-EMCL-DEV-WESTUS-RG-01/providers/Microsoft.Compute/snapshots/RH_CHG1234567_dgm011570_20240812234402

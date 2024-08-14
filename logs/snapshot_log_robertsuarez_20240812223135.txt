@@ -1,0 +1,7 @@
+2024-08-12 22:31:35.272139: CHG Number: CHG1234567
+2024-08-12 22:31:35.579943: Switched to subscription: 48fd4545-8d1b-4da2-b81c-b9e5a6552a61
+2024-08-12 22:31:36.778031: Processing VM: dgm011581
+2024-08-12 22:31:37.718506: Processing VM: dgm011582
+2024-08-12 22:31:38.722696: Processing VM: dgm011583
+2024-08-12 22:31:39.699452: Processing VM: dgm011584
+2024-08-12 22:31:40.851305: Processing VM: esns-dns-dev-admin-vm-dgm0114cf

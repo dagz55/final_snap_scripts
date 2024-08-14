@@ -1,0 +1,9 @@
+Snapshot Creation Summary
+=========================
+
+Total VMs processed: 1
+Successful snapshots: 1
+Failed snapshots: 0
+Runtime: 53.87 seconds
+
+Failed Snapshots:

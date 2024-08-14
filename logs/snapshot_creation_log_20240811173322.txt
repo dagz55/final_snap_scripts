@@ -1,0 +1,5 @@
+2024-08-11 17:33:30,222 - INFO - User is already logged in to Azure.
+2024-08-11 17:33:30,223 - INFO - CHG Number: CHG1234567
+2024-08-11 17:33:30,456 - INFO - Backing off run_az_command(...) for 0.8s (aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host management.azure.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1000)')])
+2024-08-11 17:33:31,499 - INFO - Backing off run_az_command(...) for 0.7s (aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host management.azure.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1000)')])
+2024-08-11 17:33:32,414 - ERROR - Giving up run_az_command(...) after 3 tries (aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host management.azure.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1000)')])

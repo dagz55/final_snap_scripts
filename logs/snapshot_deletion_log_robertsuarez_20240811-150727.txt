@@ -1,0 +1,34 @@
+Snapshot Deletion Log
+=====================
+
+User: robertsuarez
+Date and Time: 20240811-150727
+
+Summary:
+
+Subscription: az-core-nonprod-01
+  Valid Snapshots: 6
+  Non-existent Snapshots: 42
+  Deleted Snapshots: 6
+  Failed Deletions: 0
+
+Subscription: az-entapp-nonprod-01
+  Valid Snapshots: 1
+  Non-existent Snapshots: 5
+  Deleted Snapshots: 1
+  Failed Deletions: 0
+
+Deleted Snapshots:
+
+Subscription: az-core-nonprod-01
+  • RH_CHG1234567_dgm011582_20240811150429
+  • RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114cf_20240811150429
+  • RH_CHG1234567_dgm011581_20240811150429
+  • RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114d0_20240811150429
+  • RH_CHG1234567_dgm011583_20240811150429
+  • RH_CHG1234567_dgm011584_20240811150429
+
+Subscription: az-entapp-nonprod-01
+  • RH_CHG1234567_dgm011570_20240811150429
+
+Total Runtime: 15.17 seconds

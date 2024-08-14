@@ -1,0 +1,68 @@
+Snapshot Deletion Log
+=====================
+
+User: robertsuarez
+Date and Time: 20240815-003225
+
+Summary:
+
+Subscription: az-entapp-nonprod-01
+  Valid Snapshots: 6
+  Non-existent Snapshots: 0
+  Deleted Snapshots: 6
+  Failed Deletions: 0
+
+Subscription: az-core-nonprod-01
+  Valid Snapshots: 35
+  Non-existent Snapshots: 0
+  Deleted Snapshots: 35
+  Failed Deletions: 0
+
+Deleted Snapshots:
+
+Subscription: az-entapp-nonprod-01
+  • RH_chg1234567_dgm011570_20240813143059
+  • RH_chg1234567_dgm011570_20240809132126
+  • RH_chg1234567_dgm011570_20240813141912
+  • RH_CHG1234567_dgm011570_20240807191558
+  • RH_CHG1234567_dgm011570_20240810203714
+  • RH_chg1234567_dgm011570_20240813003356
+
+Subscription: az-core-nonprod-01
+  • RH_chg1234567_dgm011581_20240813003356
+  • RH_CHG1234567_dgm011581_20240807191558
+  • RH_CHG1234567_dgm011581_20240810203714
+  • RH_chg1234567_dgm011581_20240813141912
+  • RH_chg1234567_dgm011582_20240813141912
+  • RH_chg1234567_dgm011582_20240813143059
+  • RH_chg1234567_dgm011582_20240809132126
+  • RH_chg1234567_dgm011581_20240813143059
+  • RH_chg1234567_dgm011582_20240813003356
+  • RH_chg1234567_dgm011583_20240813003356
+  • RH_chg1234567_dgm011583_20240813141912
+  • RH_chg1234567_dgm011583_20240809132126
+  • RH_CHG1234567_dgm011583_20240810203714
+  • RH_CHG1234567_dgm011584_20240807191558
+  • RH_chg1234567_dgm011583_20240813143059
+  • RH_chg1234567_dgm011584_20240813003356
+  • RH_CHG1234567_dgm011584_20240810203714
+  • RH_chg1234567_dgm011584_20240813143059
+  • RH_chg1234567_dgm011584_20240813141912
+  • RH_chg1234567_esns-dns-dev-admin-vm-dgm0114cf_20240813003356
+  • RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114cf_20240810203714
+  • RH_chg1234567_esns-dns-dev-admin-vm-dgm0114cf_20240809132126
+  • RH_chg1234567_esns-dns-dev-admin-vm-dgm0114d0_20240809132126
+  • RH_chg1234567_esns-dns-dev-admin-vm-dgm0114cf_20240813143059
+  • RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114d0_20240807191558
+  • RH_chg1234567_esns-dns-dev-admin-vm-dgm0114d0_20240813003356
+  • RH_chg1234567_esns-dns-dev-admin-vm-dgm0114d0_20240813141912
+  • RH_chg1234567_esns-dns-dev-admin-vm-dgm0114cf_20240813141912
+  • RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114d0_20240810203714
+  • RH_chg1234567_esns-dns-dev-admin-vm-dgm0114d0_20240813143059
+  • RH_chg1234567_dgm011581_20240809132126
+  • RH_CHG1234567_dgm011583_20240807191558
+  • RH_CHG1234567_dgm011582_20240807191558
+  • RH_chg1234567_dgm011584_20240809132126
+  • RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114cf_20240807191558
+
+Total Runtime: 52.94 seconds

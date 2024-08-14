@@ -1,0 +1,205 @@
+Snapshot Validation Results
+===========================
+
+Snapshot Name: Not found: RH_CHG1234567_dgm011584
+Exists: No
+
+Snapshot Name: Not found: RH_CHG1234567_dgm011583
+Exists: No
+
+Snapshot Name: Not found: RH_CHG1234567_dgm011582
+Exists: No
+
+Snapshot Name: Not found: RH_CHG1234567_dgm011581
+Exists: No
+
+Snapshot Name: Not found: RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114d0
+Exists: No
+
+Snapshot Name: Not found: RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114cf
+Exists: No
+
+Snapshot Name: Not found: RH_CHG1234567_dgm011582
+Exists: No
+
+Snapshot Name: Not found: RH_CHG1234567_dgm011584
+Exists: No
+
+Snapshot Name: Not found: RH_CHG1234567_dgm011581
+Exists: No
+
+Snapshot Name: Not found: RH_CHG1234567_dgm011583
+Exists: No
+
+Snapshot Name: Not found: RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114cf
+Exists: No
+
+Snapshot Name: Not found: RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114d0
+Exists: No
+
+Snapshot Name: Not found: RH_CHG1234567_dgm011581
+Exists: No
+
+Snapshot Name: Not found: RH_CHG1234567_dgm011582
+Exists: No
+
+Snapshot Name: Not found: RH_CHG1234567_dgm011583
+Exists: No
+
+Snapshot Name: Not found: RH_CHG1234567_dgm011584
+Exists: No
+
+Snapshot Name: Not found: RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114cf
+Exists: No
+
+Snapshot Name: Not found: RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114d0
+Exists: No
+
+Snapshot Name: Not found: RH_CHG1234567_dgm011570
+Exists: No
+
+Snapshot Name: Not found: RH_CHG1234567_dgm011581
+Exists: No
+
+Snapshot Name: Not found: RH_CHG1234567_dgm011582
+Exists: No
+
+Snapshot Name: Not found: RH_CHG1234567_dgm011583
+Exists: No
+
+Snapshot Name: Not found: RH_CHG1234567_dgm011584
+Exists: No
+
+Snapshot Name: Not found: RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114cf
+Exists: No
+
+Snapshot Name: Not found: RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114d0
+Exists: No
+
+Snapshot Name: Not found: RH_CHG1234567_dgm011570
+Exists: No
+
+Snapshot Name: Not found: RH_CHG1234567_dgm011581
+Exists: No
+
+Snapshot Name: Not found: RH_CHG1234567_dgm011582
+Exists: No
+
+Snapshot Name: Not found: RH_CHG1234567_dgm011583
+Exists: No
+
+Snapshot Name: Not found: RH_CHG1234567_dgm011584
+Exists: No
+
+Snapshot Name: Not found: RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114cf
+Exists: No
+
+Snapshot Name: Not found: RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114d0
+Exists: No
+
+Snapshot Name: Not found: RH_CHG1234567_dgm011570
+Exists: No
+
+Snapshot Name: RH_CHG1234567_dgm011581
+Exists: Yes
+Resource Group: AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01
+Time Created: 2024-08-10T17:20:43.5680074+00:00
+Size (GB): None
+State: Succeeded
+
+Snapshot Name: RH_CHG1234567_dgm011582
+Exists: Yes
+Resource Group: AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01
+Time Created: 2024-08-10T17:20:45.5210682+00:00
+Size (GB): None
+State: Succeeded
+
+Snapshot Name: RH_CHG1234567_dgm011583
+Exists: Yes
+Resource Group: AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01
+Time Created: 2024-08-10T17:20:46.4586195+00:00
+Size (GB): None
+State: Succeeded
+
+Snapshot Name: RH_CHG1234567_dgm011584
+Exists: Yes
+Resource Group: AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01
+Time Created: 2024-08-10T17:20:47.4742076+00:00
+Size (GB): None
+State: Succeeded
+
+Snapshot Name: RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114cf
+Exists: Yes
+Resource Group: AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01
+Time Created: 2024-08-10T17:20:49.3679583+00:00
+Size (GB): None
+State: Succeeded
+
+Snapshot Name: RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114d0
+Exists: Yes
+Resource Group: AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01
+Time Created: 2024-08-10T17:20:50.5242025+00:00
+Size (GB): None
+State: Succeeded
+
+Snapshot Name: RH_CHG1234567_dgm011570
+Exists: Yes
+Resource Group: AZ-ENTAPP-NONPROD-01-EMCL-DEV-WESTUS-RG-01
+Time Created: 2024-08-10T17:21:07.9355589+00:00
+Size (GB): None
+State: Succeeded
+
+Snapshot Name: RH_CHG1234567_dgm011581
+Exists: Yes
+Resource Group: AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01
+Time Created: 2024-08-11T04:40:26.0504026+00:00
+Size (GB): None
+State: Succeeded
+
+Snapshot Name: RH_CHG1234567_dgm011582
+Exists: Yes
+Resource Group: AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01
+Time Created: 2024-08-11T04:40:27.2848514+00:00
+Size (GB): None
+State: Succeeded
+
+Snapshot Name: RH_CHG1234567_dgm011583
+Exists: Yes
+Resource Group: AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01
+Time Created: 2024-08-11T04:40:28.3785559+00:00
+Size (GB): None
+State: Succeeded
+
+Snapshot Name: RH_CHG1234567_dgm011584
+Exists: Yes
+Resource Group: AZ-CORE-NONPROD-01-EBSS-DEV-WESTUS-RG-01
+Time Created: 2024-08-11T04:40:29.3942145+00:00
+Size (GB): None
+State: Succeeded
+
+Snapshot Name: RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114cf
+Exists: Yes
+Resource Group: AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01
+Time Created: 2024-08-11T04:40:30.1153545+00:00
+Size (GB): None
+State: Succeeded
+
+Snapshot Name: RH_CHG1234567_esns-dns-dev-admin-vm-dgm0114d0
+Exists: Yes
+Resource Group: AZ-CORE-NONPROD-01-ESNS-DEV-EASTUS-RG-01
+Time Created: 2024-08-11T04:40:31.9434774+00:00
+Size (GB): None
+State: Succeeded
+
+Snapshot Name: RH_CHG1234567_dgm011570
+Exists: Yes
+Resource Group: AZ-ENTAPP-NONPROD-01-EMCL-DEV-WESTUS-RG-01
+Time Created: 2024-08-11T04:40:50.6702184+00:00
+Size (GB): None
+State: Succeeded
+
+
+Total snapshots processed: 47
+Existing snapshots: 14
+Missing snapshots: 33
+Runtime: 1.83 seconds

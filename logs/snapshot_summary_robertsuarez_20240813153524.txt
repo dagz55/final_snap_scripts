@@ -1,0 +1,16 @@
+Snapshot Creation Summary
+=========================
+
+Total VMs processed: 7
+Successful snapshots: 0
+Failed snapshots: 7
+Runtime: 2.61 seconds
+
+Failed Snapshots:
+- dgm011581: Failed to get VM details
+- dgm011582: Failed to get VM details
+- dgm011583: Failed to get VM details
+- dgm011584: Failed to get VM details
+- esns-dns-dev-admin-vm-dgm0114cf: Failed to get VM details
+- esns-dns-dev-admin-vm-dgm0114d0: Failed to get VM details
+- dgm011570: Failed to get VM details

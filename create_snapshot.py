@@ -33,6 +33,27 @@ def get_vm_info(hostname, inventory_file):
                 return line.strip()
     return None
 
+def extract_vm_info(host_file):
+    if not os.path.exists(inventory_file):
+        console.print(f"[bold red]Error: Inventory file '{inventory_file}' not found.[/bold red]")
+        return None
+
+    if not os.path.exists(host_file):
+        console.print(f"[bold red]Error: List file '{host_file}' not found.[/bold red]")
+        return None
+
+    vm_list = []
+    with open(host_file, 'r') as f:
+        hostnames = f.read().splitlines()
+        for hostname in hostnames:
+            vm_info = get_vm_info(hostname, inventory_file)
+            if vm_info:
+                vm_list.append(vm_info)
+            else:
+                console.print(f"[bold yellow]Warning: Information not found for hostname '{hostname}'[/bold yellow]")
+
+    return vm_list
+
 async def run_az_command(command, max_retries=3, delay=5):
     for attempt in range(max_retries):
         process = await asyncio.create_subprocess_shell(
@@ -113,23 +134,9 @@ async def main():
     
     write_log(f"CHG Number: {chg_number}")
 
-    if not os.path.exists(inventory_file):
-        console.print(f"[bold red]Error: Inventory file '{inventory_file}' not found.[/bold red]")
+    vm_list = extract_vm_info(host_file)
+    if vm_list is None:
         return
-
-    if not os.path.exists(host_file):
-        console.print(f"[bold red]Error: List file '{host_file}' not found.[/bold red]")
-        return
-
-    vm_list = []
-    with open(host_file, 'r') as f:
-        hostnames = f.read().splitlines()
-        for hostname in hostnames:
-            vm_info = get_vm_info(hostname, inventory_file)
-            if vm_info:
-                vm_list.append(vm_info)
-            else:
-                console.print(f"[bold yellow]Warning: Information not found for hostname '{hostname}'[/bold yellow]")
 
     total_vms = len(vm_list)
     if total_vms == 0:

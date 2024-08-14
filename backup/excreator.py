@@ -1,17 +1,17 @@
+import os
 import asyncio
-import csv
+import json
 import datetime
 import getpass
-import json
-import os
-import aiofiles
-
+import csv
 from collections import defaultdict
 from functools import lru_cache
+from concurrent.futures import ThreadPoolExecutor
+import aiofiles
 from rich.console import Console
+from rich.progress import Progress, SpinnerColumn, BarColumn, TextColumn
 from rich.live import Live
 from rich.panel import Panel
-from rich.progress import BarColumn, Progress, SpinnerColumn, TextColumn
 from rich.table import Table
 
 console = Console()
@@ -29,7 +29,6 @@ semaphore = asyncio.Semaphore(10)
 successful_snapshots = []
 failed_snapshots = []
 inventory_file = 'linux_vm-inventory.csv'
-
 
 @lru_cache(maxsize=None)
 def get_vm_info(hostname, inventory_file):
